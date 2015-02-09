@@ -1,0 +1,8 @@
+# finder
+.DS_Store
+
+# python
+__pycache__
+
+_bld
+_misc
