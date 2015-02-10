@@ -1,0 +1,840 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC08D6601AD073A900FCC955 /* Ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08D65F1AD073A900FCC955 /* Ray.swift */; };
+		EC08D6621AD0870C00FCC955 /* trace.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08D6611AD0870C00FCC955 /* trace.swift */; };
+		EC0C677A1AB9DF1B0079ECE5 /* VecType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0C67791AB9DF1B0079ECE5 /* VecType.swift */; };
+		EC0C677C1AB9DF240079ECE5 /* vec-generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0C677B1AB9DF240079ECE5 /* vec-generated.swift */; };
+		EC22265D1AA155A30090C8E8 /* NSManagedObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226041AA155A20090C8E8 /* NSManagedObjectModel.swift */; };
+		EC22265E1AA155A30090C8E8 /* arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226061AA155A20090C8E8 /* arithmetic.swift */; };
+		EC22265F1AA155A30090C8E8 /* func.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226081AA155A20090C8E8 /* func.swift */; };
+		EC2226601AA155A30090C8E8 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226091AA155A20090C8E8 /* Index.swift */; };
+		EC2226621AA155A30090C8E8 /* math.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22260B1AA155A20090C8E8 /* math.swift */; };
+		EC2226631AA155A30090C8E8 /* types.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22260C1AA155A20090C8E8 /* types.swift */; };
+		EC2226641AA155A30090C8E8 /* util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22260D1AA155A20090C8E8 /* util.swift */; };
+		EC2226651AA155A30090C8E8 /* CoreGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22260F1AA155A20090C8E8 /* CoreGraphics.swift */; };
+		EC2226661AA155A30090C8E8 /* CRColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226101AA155A20090C8E8 /* CRColor.swift */; };
+		EC2226671AA155A30090C8E8 /* CREdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226111AA155A20090C8E8 /* CREdgeInsets.swift */; };
+		EC2226681AA155A30090C8E8 /* CREvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226121AA155A20090C8E8 /* CREvent.swift */; };
+		EC2226691AA155A30090C8E8 /* CRFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226131AA155A20090C8E8 /* CRFont.swift */; };
+		EC22266A1AA155A30090C8E8 /* CRResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226141AA155A20090C8E8 /* CRResponder.swift */; };
+		EC22266B1AA155A30090C8E8 /* CRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226151AA155A20090C8E8 /* CRView.swift */; };
+		EC22266C1AA155A30090C8E8 /* layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226161AA155A20090C8E8 /* layout.swift */; };
+		EC22266D1AA155A30090C8E8 /* NSLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2226181AA155A20090C8E8 /* NSLayoutConstraint.m */; };
+		EC22266E1AA155A30090C8E8 /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226191AA155A20090C8E8 /* NSLayoutConstraint.swift */; };
+		EC22266F1AA155A30090C8E8 /* QKResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22261A1AA155A20090C8E8 /* QKResponder.swift */; };
+		EC2226701AA155A30090C8E8 /* V2-generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22261B1AA155A20090C8E8 /* V2-generated.swift */; };
+		EC2226711AA155A30090C8E8 /* NSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22261D1AA155A20090C8E8 /* NSBundle.swift */; };
+		EC2226721AA155A30090C8E8 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22261E1AA155A20090C8E8 /* NSDate.swift */; };
+		EC2226731AA155A30090C8E8 /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22261F1AA155A20090C8E8 /* NSError.swift */; };
+		EC2226741AA155A30090C8E8 /* NSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226201AA155A20090C8E8 /* NSFileManager.swift */; };
+		EC2226751AA155A30090C8E8 /* NSIndexPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226211AA155A20090C8E8 /* NSIndexPath.swift */; };
+		EC2226761AA155A30090C8E8 /* NSNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226221AA155A20090C8E8 /* NSNotificationCenter.swift */; };
+		EC2226771AA155A30090C8E8 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226231AA155A20090C8E8 /* NSObject.swift */; };
+		EC2226781AA155A30090C8E8 /* NSOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226241AA155A20090C8E8 /* NSOutputStream.swift */; };
+		EC22267D1AA155A30090C8E8 /* GLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22262B1AA155A20090C8E8 /* GLView.swift */; };
+		EC22267F1AA155A30090C8E8 /* gl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22262E1AA155A30090C8E8 /* gl.swift */; };
+		EC2226801AA155A30090C8E8 /* GLLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22262F1AA155A30090C8E8 /* GLLayer.swift */; };
+		EC2226811AA155A30090C8E8 /* GLProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226301AA155A30090C8E8 /* GLProgram.swift */; };
+		EC2226821AA155A30090C8E8 /* GLShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226311AA155A30090C8E8 /* GLShader.swift */; };
+		EC2226841AA155A30090C8E8 /* GLTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226331AA155A30090C8E8 /* GLTexture.swift */; };
+		EC2226851AA155A30090C8E8 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226341AA155A30090C8E8 /* View.swift */; };
+		EC2226861AA155A30090C8E8 /* PixFmt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226361AA155A30090C8E8 /* PixFmt.swift */; };
+		EC2226A31AA155A30090C8E8 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226571AA155A30090C8E8 /* Array.swift */; };
+		EC2226A41AA155A30090C8E8 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226581AA155A30090C8E8 /* Character.swift */; };
+		EC2226A51AA155A30090C8E8 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226591AA155A30090C8E8 /* Dictionary.swift */; };
+		EC2226A61AA155A30090C8E8 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22265A1AA155A30090C8E8 /* Int.swift */; };
+		EC2226A71AA155A30090C8E8 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22265B1AA155A30090C8E8 /* Optional.swift */; };
+		EC2226A81AA155A30090C8E8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22265C1AA155A30090C8E8 /* String.swift */; };
+		EC42379A1AD12BDB00A54C2E /* mat-generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4237991AD12BDB00A54C2E /* mat-generated.swift */; };
+		EC53334419D8A6E8006D7908 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC62596F198EB20200876DFC /* Images.xcassets */; };
+		EC625966198EB20200876DFC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC625965198EB20200876DFC /* main.swift */; };
+		EC625968198EB20200876DFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC625967198EB20200876DFC /* AppDelegate.swift */; };
+		EC62597F198EB20200876DFC /* GlintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC62597E198EB20200876DFC /* GlintTests.swift */; };
+		EC7A00551AB7414B003575E3 /* GLTextAtlas.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A00521AB7414B003575E3 /* GLTextAtlas.swift */; };
+		EC7A00561AB7414B003575E3 /* GLTextPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A00531AB7414B003575E3 /* GLTextPage.swift */; };
+		EC7A00571AB7414B003575E3 /* GLTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A00541AB7414B003575E3 /* GLTextView.swift */; };
+		EC7A005C1AB74183003575E3 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A00581AB74183003575E3 /* Font.swift */; };
+		EC7A005D1AB74183003575E3 /* glyphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A00591AB74183003575E3 /* glyphs.swift */; };
+		EC7A005E1AB74183003575E3 /* img.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A005B1AB74183003575E3 /* img.swift */; };
+		EC7A281B1AD2CE54008A55DF /* atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A281A1AD2CE54008A55DF /* atomic.swift */; };
+		EC7A281D1AD2F0D5008A55DF /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A281C1AD2F0D5008A55DF /* Time.swift */; };
+		EC7A281F1AD2F440008A55DF /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A281E1AD2F440008A55DF /* Scene.swift */; };
+		EC7A28211AD2F473008A55DF /* Surface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A28201AD2F473008A55DF /* Surface.swift */; };
+		EC7A28231AD2F4AF008A55DF /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A28221AD2F4AF008A55DF /* Material.swift */; };
+		EC7A28251AD2F4C3008A55DF /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A28241AD2F4C3008A55DF /* Sphere.swift */; };
+		EC7A28271AD2F4DC008A55DF /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A28261AD2F4DC008A55DF /* Plane.swift */; };
+		EC7A28291AD2F58B008A55DF /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A28281AD2F58B008A55DF /* Pixel.swift */; };
+		EC7A282B1AD2F6A9008A55DF /* Intersection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A282A1AD2F6A9008A55DF /* Intersection.swift */; };
+		EC7A282D1AD2F709008A55DF /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A282C1AD2F709008A55DF /* Box.swift */; };
+		EC87BDC41AA8E8CD00A10BAB /* GLEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC87BDC31AA8E8CD00A10BAB /* GLEvent.swift */; };
+		EC87BDC61AAA0AC300A10BAB /* OptionSetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC87BDC51AAA0AC300A10BAB /* OptionSetType.swift */; };
+		EC8A72651AA791CF007B038E /* CRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A72641AA791CF007B038E /* CRViewController.swift */; };
+		EC8A72671AA7924B007B038E /* GLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A72661AA7924B007B038E /* GLViewController.swift */; };
+		EC8D87881AC10A1900C38431 /* CollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8D87871AC10A1900C38431 /* CollectionType.swift */; };
+		EC8E70F51ABB740A0072D6BC /* SourceCodePro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC8E70F41ABB740A0072D6BC /* SourceCodePro-Regular.otf */; };
+		EC8E70F71ABB85640072D6BC /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E70F61ABB85640072D6BC /* Resource.swift */; };
+		EC8E70F91ABBBEE00072D6BC /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E70F81ABBBEE00072D6BC /* Process.swift */; };
+		EC9F6B3B1AAC913A008D8178 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F6B3A1AAC913A008D8178 /* Error.swift */; };
+		EC9F6B3D1AAC95F4008D8178 /* Res.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F6B3C1AAC95F4008D8178 /* Res.swift */; };
+		EC9F6B3F1AACCB7A008D8178 /* event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F6B3E1AACCB7A008D8178 /* event.swift */; };
+		EC9F6B431AACCC7E008D8178 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9F6B411AACCC7E008D8178 /* Image.m */; };
+		EC9F6B441AACCC7E008D8178 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F6B421AACCC7E008D8178 /* Image.swift */; };
+		ECAF1A9E1AA79FCE00CC819B /* CRWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAF1A9D1AA79FCE00CC819B /* CRWindow.swift */; };
+		ECAF1AA01AA7CA1E00CC819B /* render.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAF1A9F1AA7CA1E00CC819B /* render.swift */; };
+		ECF0DA271ABDE4DC00E060E2 /* dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0DA261ABDE4DC00E060E2 /* dispatch.swift */; };
+		ECF962EC1AAB736500FBEBCB /* libbz2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF962EB1AAB736500FBEBCB /* libbz2.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC625979198EB20200876DFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC625958198EB20200876DFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC62595F198EB20200876DFC;
+			remoteInfo = Glint;
+		};
+		EC62598A198EBDBC00876DFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC625958198EB20200876DFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC62595F198EB20200876DFC;
+			remoteInfo = Glint;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EC08D65F1AD073A900FCC955 /* Ray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ray.swift; sourceTree = "<group>"; };
+		EC08D6611AD0870C00FCC955 /* trace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = trace.swift; sourceTree = "<group>"; };
+		EC0C67791AB9DF1B0079ECE5 /* VecType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VecType.swift; sourceTree = "<group>"; };
+		EC0C677B1AB9DF240079ECE5 /* vec-generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "vec-generated.swift"; sourceTree = "<group>"; };
+		EC0C677D1AB9E0D90079ECE5 /* core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
+		EC2226041AA155A20090C8E8 /* NSManagedObjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectModel.swift; sourceTree = "<group>"; };
+		EC2226061AA155A20090C8E8 /* arithmetic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = arithmetic.swift; sourceTree = "<group>"; };
+		EC2226081AA155A20090C8E8 /* func.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = func.swift; sourceTree = "<group>"; };
+		EC2226091AA155A20090C8E8 /* Index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
+		EC22260B1AA155A20090C8E8 /* math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = math.swift; sourceTree = "<group>"; };
+		EC22260C1AA155A20090C8E8 /* types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = types.swift; sourceTree = "<group>"; };
+		EC22260D1AA155A20090C8E8 /* util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = util.swift; sourceTree = "<group>"; };
+		EC22260F1AA155A20090C8E8 /* CoreGraphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphics.swift; sourceTree = "<group>"; };
+		EC2226101AA155A20090C8E8 /* CRColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRColor.swift; sourceTree = "<group>"; };
+		EC2226111AA155A20090C8E8 /* CREdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CREdgeInsets.swift; sourceTree = "<group>"; };
+		EC2226121AA155A20090C8E8 /* CREvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CREvent.swift; sourceTree = "<group>"; };
+		EC2226131AA155A20090C8E8 /* CRFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRFont.swift; sourceTree = "<group>"; };
+		EC2226141AA155A20090C8E8 /* CRResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRResponder.swift; sourceTree = "<group>"; };
+		EC2226151AA155A20090C8E8 /* CRView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRView.swift; sourceTree = "<group>"; };
+		EC2226161AA155A20090C8E8 /* layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = layout.swift; sourceTree = "<group>"; };
+		EC2226171AA155A20090C8E8 /* NSLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSLayoutConstraint.h; sourceTree = "<group>"; };
+		EC2226181AA155A20090C8E8 /* NSLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSLayoutConstraint.m; sourceTree = "<group>"; };
+		EC2226191AA155A20090C8E8 /* NSLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint.swift; sourceTree = "<group>"; };
+		EC22261A1AA155A20090C8E8 /* QKResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QKResponder.swift; sourceTree = "<group>"; };
+		EC22261B1AA155A20090C8E8 /* V2-generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "V2-generated.swift"; sourceTree = "<group>"; };
+		EC22261D1AA155A20090C8E8 /* NSBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundle.swift; sourceTree = "<group>"; };
+		EC22261E1AA155A20090C8E8 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
+		EC22261F1AA155A20090C8E8 /* NSError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
+		EC2226201AA155A20090C8E8 /* NSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSFileManager.swift; sourceTree = "<group>"; };
+		EC2226211AA155A20090C8E8 /* NSIndexPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSIndexPath.swift; sourceTree = "<group>"; };
+		EC2226221AA155A20090C8E8 /* NSNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenter.swift; sourceTree = "<group>"; };
+		EC2226231AA155A20090C8E8 /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		EC2226241AA155A20090C8E8 /* NSOutputStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSOutputStream.swift; sourceTree = "<group>"; };
+		EC22262B1AA155A20090C8E8 /* GLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLView.swift; sourceTree = "<group>"; };
+		EC22262E1AA155A30090C8E8 /* gl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gl.swift; sourceTree = "<group>"; };
+		EC22262F1AA155A30090C8E8 /* GLLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLLayer.swift; sourceTree = "<group>"; };
+		EC2226301AA155A30090C8E8 /* GLProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLProgram.swift; sourceTree = "<group>"; };
+		EC2226311AA155A30090C8E8 /* GLShader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLShader.swift; sourceTree = "<group>"; };
+		EC2226331AA155A30090C8E8 /* GLTexture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLTexture.swift; sourceTree = "<group>"; };
+		EC2226341AA155A30090C8E8 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		EC2226361AA155A30090C8E8 /* PixFmt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PixFmt.swift; sourceTree = "<group>"; };
+		EC2226571AA155A30090C8E8 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		EC2226581AA155A30090C8E8 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		EC2226591AA155A30090C8E8 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		EC22265A1AA155A30090C8E8 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		EC22265B1AA155A30090C8E8 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
+		EC22265C1AA155A30090C8E8 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		EC4237991AD12BDB00A54C2E /* mat-generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "mat-generated.swift"; sourceTree = "<group>"; };
+		EC4852D519CCCFCE00A7B422 /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
+		EC53332719D8A56D006D7908 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		EC53332919D8A56D006D7908 /* license-qk.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "license-qk.txt"; sourceTree = "<group>"; };
+		EC53332A19D8A56D006D7908 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
+		EC60F67819D0641C00CDDC84 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		EC625960198EB20200876DFC /* Glint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glint.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC625964198EB20200876DFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC625965198EB20200876DFC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EC625967198EB20200876DFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EC62596F198EB20200876DFC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EC625978198EB20200876DFC /* GlintTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlintTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC62597D198EB20200876DFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC62597E198EB20200876DFC /* GlintTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlintTests.swift; sourceTree = "<group>"; };
+		EC7A00521AB7414B003575E3 /* GLTextAtlas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLTextAtlas.swift; sourceTree = "<group>"; };
+		EC7A00531AB7414B003575E3 /* GLTextPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLTextPage.swift; sourceTree = "<group>"; };
+		EC7A00541AB7414B003575E3 /* GLTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLTextView.swift; sourceTree = "<group>"; };
+		EC7A00581AB74183003575E3 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		EC7A00591AB74183003575E3 /* glyphs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = glyphs.swift; sourceTree = "<group>"; };
+		EC7A005A1AB74183003575E3 /* img.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = img.h; sourceTree = "<group>"; };
+		EC7A005B1AB74183003575E3 /* img.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = img.swift; sourceTree = "<group>"; };
+		EC7A281A1AD2CE54008A55DF /* atomic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = atomic.swift; sourceTree = "<group>"; };
+		EC7A281C1AD2F0D5008A55DF /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		EC7A281E1AD2F440008A55DF /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		EC7A28201AD2F473008A55DF /* Surface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Surface.swift; sourceTree = "<group>"; };
+		EC7A28221AD2F4AF008A55DF /* Material.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
+		EC7A28241AD2F4C3008A55DF /* Sphere.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sphere.swift; sourceTree = "<group>"; };
+		EC7A28261AD2F4DC008A55DF /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
+		EC7A28281AD2F58B008A55DF /* Pixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pixel.swift; sourceTree = "<group>"; };
+		EC7A282A1AD2F6A9008A55DF /* Intersection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intersection.swift; sourceTree = "<group>"; };
+		EC7A282C1AD2F709008A55DF /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		EC87BDC31AA8E8CD00A10BAB /* GLEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLEvent.swift; sourceTree = "<group>"; };
+		EC87BDC51AAA0AC300A10BAB /* OptionSetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionSetType.swift; sourceTree = "<group>"; };
+		EC8A72641AA791CF007B038E /* CRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRViewController.swift; sourceTree = "<group>"; };
+		EC8A72661AA7924B007B038E /* GLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLViewController.swift; sourceTree = "<group>"; };
+		EC8D87871AC10A1900C38431 /* CollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionType.swift; sourceTree = "<group>"; };
+		EC8E70F41ABB740A0072D6BC /* SourceCodePro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Regular.otf"; sourceTree = "<group>"; };
+		EC8E70F61ABB85640072D6BC /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		EC8E70F81ABBBEE00072D6BC /* Process.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
+		EC9F6B3A1AAC913A008D8178 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		EC9F6B3C1AAC95F4008D8178 /* Res.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Res.swift; sourceTree = "<group>"; };
+		EC9F6B3E1AACCB7A008D8178 /* event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = event.swift; sourceTree = "<group>"; };
+		EC9F6B401AACCC7E008D8178 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		EC9F6B411AACCC7E008D8178 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		EC9F6B421AACCC7E008D8178 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		ECAF1A9D1AA79FCE00CC819B /* CRWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRWindow.swift; sourceTree = "<group>"; };
+		ECAF1A9F1AA7CA1E00CC819B /* render.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = render.swift; sourceTree = "<group>"; };
+		ECF0DA261ABDE4DC00E060E2 /* dispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dispatch.swift; sourceTree = "<group>"; };
+		ECF962EB1AAB736500FBEBCB /* libbz2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libbz2.dylib; path = usr/lib/libbz2.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC62595D198EB20200876DFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECF962EC1AAB736500FBEBCB /* libbz2.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC625975198EB20200876DFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC2226021AA155A20090C8E8 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				EC2226031AA155A20090C8E8 /* cd */,
+				EC2226051AA155A20090C8E8 /* core */,
+				EC22260E1AA155A20090C8E8 /* cr */,
+				EC22261C1AA155A20090C8E8 /* foundation */,
+				EC22262A1AA155A20090C8E8 /* gl */,
+				EC2226351AA155A30090C8E8 /* img */,
+				EC2226561AA155A30090C8E8 /* std */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		EC2226031AA155A20090C8E8 /* cd */ = {
+			isa = PBXGroup;
+			children = (
+				EC2226041AA155A20090C8E8 /* NSManagedObjectModel.swift */,
+			);
+			path = cd;
+			sourceTree = "<group>";
+		};
+		EC2226051AA155A20090C8E8 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				EC2226061AA155A20090C8E8 /* arithmetic.swift */,
+				EC7A281A1AD2CE54008A55DF /* atomic.swift */,
+				EC0C677D1AB9E0D90079ECE5 /* core.h */,
+				ECF0DA261ABDE4DC00E060E2 /* dispatch.swift */,
+				EC9F6B3A1AAC913A008D8178 /* Error.swift */,
+				EC2226081AA155A20090C8E8 /* func.swift */,
+				EC2226091AA155A20090C8E8 /* Index.swift */,
+				EC4237991AD12BDB00A54C2E /* mat-generated.swift */,
+				EC22260B1AA155A20090C8E8 /* math.swift */,
+				EC87BDC51AAA0AC300A10BAB /* OptionSetType.swift */,
+				EC9F6B3C1AAC95F4008D8178 /* Res.swift */,
+				EC8E70F61ABB85640072D6BC /* Resource.swift */,
+				EC22260C1AA155A20090C8E8 /* types.swift */,
+				EC22260D1AA155A20090C8E8 /* util.swift */,
+				EC0C677B1AB9DF240079ECE5 /* vec-generated.swift */,
+				EC0C67791AB9DF1B0079ECE5 /* VecType.swift */,
+				EC7A281C1AD2F0D5008A55DF /* Time.swift */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		EC22260E1AA155A20090C8E8 /* cr */ = {
+			isa = PBXGroup;
+			children = (
+				EC22260F1AA155A20090C8E8 /* CoreGraphics.swift */,
+				EC2226101AA155A20090C8E8 /* CRColor.swift */,
+				EC2226111AA155A20090C8E8 /* CREdgeInsets.swift */,
+				EC2226121AA155A20090C8E8 /* CREvent.swift */,
+				EC2226131AA155A20090C8E8 /* CRFont.swift */,
+				EC2226141AA155A20090C8E8 /* CRResponder.swift */,
+				EC2226151AA155A20090C8E8 /* CRView.swift */,
+				EC8A72641AA791CF007B038E /* CRViewController.swift */,
+				ECAF1A9D1AA79FCE00CC819B /* CRWindow.swift */,
+				EC2226161AA155A20090C8E8 /* layout.swift */,
+				EC2226171AA155A20090C8E8 /* NSLayoutConstraint.h */,
+				EC2226181AA155A20090C8E8 /* NSLayoutConstraint.m */,
+				EC2226191AA155A20090C8E8 /* NSLayoutConstraint.swift */,
+				EC22261A1AA155A20090C8E8 /* QKResponder.swift */,
+				EC22261B1AA155A20090C8E8 /* V2-generated.swift */,
+			);
+			path = cr;
+			sourceTree = "<group>";
+		};
+		EC22261C1AA155A20090C8E8 /* foundation */ = {
+			isa = PBXGroup;
+			children = (
+				EC22261D1AA155A20090C8E8 /* NSBundle.swift */,
+				EC22261E1AA155A20090C8E8 /* NSDate.swift */,
+				EC22261F1AA155A20090C8E8 /* NSError.swift */,
+				EC2226201AA155A20090C8E8 /* NSFileManager.swift */,
+				EC2226211AA155A20090C8E8 /* NSIndexPath.swift */,
+				EC2226221AA155A20090C8E8 /* NSNotificationCenter.swift */,
+				EC2226231AA155A20090C8E8 /* NSObject.swift */,
+				EC2226241AA155A20090C8E8 /* NSOutputStream.swift */,
+			);
+			path = foundation;
+			sourceTree = "<group>";
+		};
+		EC22262A1AA155A20090C8E8 /* gl */ = {
+			isa = PBXGroup;
+			children = (
+				EC22262E1AA155A30090C8E8 /* gl.swift */,
+				EC87BDC31AA8E8CD00A10BAB /* GLEvent.swift */,
+				EC22262F1AA155A30090C8E8 /* GLLayer.swift */,
+				EC2226301AA155A30090C8E8 /* GLProgram.swift */,
+				EC2226311AA155A30090C8E8 /* GLShader.swift */,
+				EC7A00521AB7414B003575E3 /* GLTextAtlas.swift */,
+				EC7A00531AB7414B003575E3 /* GLTextPage.swift */,
+				EC2226331AA155A30090C8E8 /* GLTexture.swift */,
+				EC7A00541AB7414B003575E3 /* GLTextView.swift */,
+				EC22262B1AA155A20090C8E8 /* GLView.swift */,
+				EC8A72661AA7924B007B038E /* GLViewController.swift */,
+				EC2226341AA155A30090C8E8 /* View.swift */,
+			);
+			path = gl;
+			sourceTree = "<group>";
+		};
+		EC2226351AA155A30090C8E8 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A00581AB74183003575E3 /* Font.swift */,
+				EC7A00591AB74183003575E3 /* glyphs.swift */,
+				EC9F6B401AACCC7E008D8178 /* Image.h */,
+				EC9F6B411AACCC7E008D8178 /* Image.m */,
+				EC9F6B421AACCC7E008D8178 /* Image.swift */,
+				EC7A005A1AB74183003575E3 /* img.h */,
+				EC7A005B1AB74183003575E3 /* img.swift */,
+				EC2226361AA155A30090C8E8 /* PixFmt.swift */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
+		EC2226561AA155A30090C8E8 /* std */ = {
+			isa = PBXGroup;
+			children = (
+				EC2226571AA155A30090C8E8 /* Array.swift */,
+				EC2226581AA155A30090C8E8 /* Character.swift */,
+				EC2226591AA155A30090C8E8 /* Dictionary.swift */,
+				EC22265A1AA155A30090C8E8 /* Int.swift */,
+				EC22265B1AA155A30090C8E8 /* Optional.swift */,
+				EC22265C1AA155A30090C8E8 /* String.swift */,
+				EC8E70F81ABBBEE00072D6BC /* Process.swift */,
+				EC8D87871AC10A1900C38431 /* CollectionType.swift */,
+			);
+			path = std;
+			sourceTree = "<group>";
+		};
+		EC53332619D8A56D006D7908 /* qk */ = {
+			isa = PBXGroup;
+			children = (
+				EC53332719D8A56D006D7908 /* .gitignore */,
+				EC53332919D8A56D006D7908 /* license-qk.txt */,
+				EC53332A19D8A56D006D7908 /* makefile */,
+				EC2226021AA155A20090C8E8 /* src */,
+			);
+			path = qk;
+			sourceTree = "<group>";
+		};
+		EC625957198EB20200876DFC = {
+			isa = PBXGroup;
+			children = (
+				ECF962EB1AAB736500FBEBCB /* libbz2.dylib */,
+				EC60F67819D0641C00CDDC84 /* GLKit.framework */,
+				EC62596F198EB20200876DFC /* Images.xcassets */,
+				EC625964198EB20200876DFC /* Info.plist */,
+				EC53332619D8A56D006D7908 /* qk */,
+				EC8E70F31ABB740A0072D6BC /* res */,
+				EC625962198EB20200876DFC /* src */,
+				EC62597B198EB20200876DFC /* test */,
+				EC625961198EB20200876DFC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC625961198EB20200876DFC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC625960198EB20200876DFC /* Glint.app */,
+				EC625978198EB20200876DFC /* GlintTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC625962198EB20200876DFC /* src */ = {
+			isa = PBXGroup;
+			children = (
+				EC625967198EB20200876DFC /* AppDelegate.swift */,
+				EC7A282C1AD2F709008A55DF /* Box.swift */,
+				EC4852D519CCCFCE00A7B422 /* bridge.h */,
+				EC9F6B3E1AACCB7A008D8178 /* event.swift */,
+				EC7A282A1AD2F6A9008A55DF /* Intersection.swift */,
+				EC625965198EB20200876DFC /* main.swift */,
+				ECAF1A9F1AA7CA1E00CC819B /* render.swift */,
+				EC7A28221AD2F4AF008A55DF /* Material.swift */,
+				EC7A281E1AD2F440008A55DF /* Scene.swift */,
+				EC7A28281AD2F58B008A55DF /* Pixel.swift */,
+				EC7A28261AD2F4DC008A55DF /* Plane.swift */,
+				EC7A28241AD2F4C3008A55DF /* Sphere.swift */,
+				EC7A28201AD2F473008A55DF /* Surface.swift */,
+				EC08D65F1AD073A900FCC955 /* Ray.swift */,
+				EC08D6611AD0870C00FCC955 /* trace.swift */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		EC62597B198EB20200876DFC /* test */ = {
+			isa = PBXGroup;
+			children = (
+				EC62597E198EB20200876DFC /* GlintTests.swift */,
+				EC62597D198EB20200876DFC /* Info.plist */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+		EC8E70F31ABB740A0072D6BC /* res */ = {
+			isa = PBXGroup;
+			children = (
+				EC8E70F41ABB740A0072D6BC /* SourceCodePro-Regular.otf */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC62595F198EB20200876DFC /* Glint */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC625982198EB20200876DFC /* Build configuration list for PBXNativeTarget "Glint" */;
+			buildPhases = (
+				EC62595C198EB20200876DFC /* Sources */,
+				EC62595D198EB20200876DFC /* Frameworks */,
+				EC53334519D8A7F8006D7908 /* Make Resources Directory */,
+				EC62595E198EB20200876DFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Glint;
+			productName = Glint;
+			productReference = EC625960198EB20200876DFC /* Glint.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC625977198EB20200876DFC /* GlintTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC625985198EB20200876DFC /* Build configuration list for PBXNativeTarget "GlintTests" */;
+			buildPhases = (
+				EC625974198EB20200876DFC /* Sources */,
+				EC625975198EB20200876DFC /* Frameworks */,
+				EC625976198EB20200876DFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC62597A198EB20200876DFC /* PBXTargetDependency */,
+				EC62598B198EBDBC00876DFC /* PBXTargetDependency */,
+			);
+			name = GlintTests;
+			productName = GlintTests;
+			productReference = EC625978198EB20200876DFC /* GlintTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC625958198EB20200876DFC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "George King";
+				TargetAttributes = {
+					EC62595F198EB20200876DFC = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					EC625977198EB20200876DFC = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = EC62595F198EB20200876DFC;
+					};
+				};
+			};
+			buildConfigurationList = EC62595B198EB20200876DFC /* Build configuration list for PBXProject "glint" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC625957198EB20200876DFC;
+			productRefGroup = EC625961198EB20200876DFC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC62595F198EB20200876DFC /* Glint */,
+				EC625977198EB20200876DFC /* GlintTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC62595E198EB20200876DFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC8E70F51ABB740A0072D6BC /* SourceCodePro-Regular.otf in Resources */,
+				EC53334419D8A6E8006D7908 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC625976198EB20200876DFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EC53334519D8A7F8006D7908 /* Make Resources Directory */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Make Resources Directory";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -ex\nmkdir -p $TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC62595C198EB20200876DFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC2226701AA155A30090C8E8 /* V2-generated.swift in Sources */,
+				EC9F6B431AACCC7E008D8178 /* Image.m in Sources */,
+				EC7A281B1AD2CE54008A55DF /* atomic.swift in Sources */,
+				EC2226841AA155A30090C8E8 /* GLTexture.swift in Sources */,
+				EC7A28291AD2F58B008A55DF /* Pixel.swift in Sources */,
+				EC87BDC41AA8E8CD00A10BAB /* GLEvent.swift in Sources */,
+				EC9F6B3B1AAC913A008D8178 /* Error.swift in Sources */,
+				EC2226851AA155A30090C8E8 /* View.swift in Sources */,
+				EC2226A51AA155A30090C8E8 /* Dictionary.swift in Sources */,
+				EC87BDC61AAA0AC300A10BAB /* OptionSetType.swift in Sources */,
+				EC22265E1AA155A30090C8E8 /* arithmetic.swift in Sources */,
+				EC7A28231AD2F4AF008A55DF /* Material.swift in Sources */,
+				EC2226671AA155A30090C8E8 /* CREdgeInsets.swift in Sources */,
+				EC8A72651AA791CF007B038E /* CRViewController.swift in Sources */,
+				EC8E70F91ABBBEE00072D6BC /* Process.swift in Sources */,
+				EC2226861AA155A30090C8E8 /* PixFmt.swift in Sources */,
+				EC625968198EB20200876DFC /* AppDelegate.swift in Sources */,
+				EC9F6B441AACCC7E008D8178 /* Image.swift in Sources */,
+				EC2226641AA155A30090C8E8 /* util.swift in Sources */,
+				EC2226811AA155A30090C8E8 /* GLProgram.swift in Sources */,
+				EC2226761AA155A30090C8E8 /* NSNotificationCenter.swift in Sources */,
+				EC2226A31AA155A30090C8E8 /* Array.swift in Sources */,
+				EC22267D1AA155A30090C8E8 /* GLView.swift in Sources */,
+				EC7A00571AB7414B003575E3 /* GLTextView.swift in Sources */,
+				EC2226651AA155A30090C8E8 /* CoreGraphics.swift in Sources */,
+				EC2226731AA155A30090C8E8 /* NSError.swift in Sources */,
+				EC7A005D1AB74183003575E3 /* glyphs.swift in Sources */,
+				EC2226A61AA155A30090C8E8 /* Int.swift in Sources */,
+				EC7A005E1AB74183003575E3 /* img.swift in Sources */,
+				EC7A282D1AD2F709008A55DF /* Box.swift in Sources */,
+				EC22266D1AA155A30090C8E8 /* NSLayoutConstraint.m in Sources */,
+				EC7A00561AB7414B003575E3 /* GLTextPage.swift in Sources */,
+				EC2226741AA155A30090C8E8 /* NSFileManager.swift in Sources */,
+				EC2226781AA155A30090C8E8 /* NSOutputStream.swift in Sources */,
+				EC2226771AA155A30090C8E8 /* NSObject.swift in Sources */,
+				EC2226721AA155A30090C8E8 /* NSDate.swift in Sources */,
+				EC08D6601AD073A900FCC955 /* Ray.swift in Sources */,
+				EC7A281F1AD2F440008A55DF /* Scene.swift in Sources */,
+				EC22266B1AA155A30090C8E8 /* CRView.swift in Sources */,
+				ECAF1A9E1AA79FCE00CC819B /* CRWindow.swift in Sources */,
+				EC7A28211AD2F473008A55DF /* Surface.swift in Sources */,
+				EC7A005C1AB74183003575E3 /* Font.swift in Sources */,
+				EC2226621AA155A30090C8E8 /* math.swift in Sources */,
+				EC22267F1AA155A30090C8E8 /* gl.swift in Sources */,
+				EC7A00551AB7414B003575E3 /* GLTextAtlas.swift in Sources */,
+				EC625966198EB20200876DFC /* main.swift in Sources */,
+				EC2226711AA155A30090C8E8 /* NSBundle.swift in Sources */,
+				EC2226A71AA155A30090C8E8 /* Optional.swift in Sources */,
+				EC42379A1AD12BDB00A54C2E /* mat-generated.swift in Sources */,
+				EC7A281D1AD2F0D5008A55DF /* Time.swift in Sources */,
+				EC22265F1AA155A30090C8E8 /* func.swift in Sources */,
+				EC2226601AA155A30090C8E8 /* Index.swift in Sources */,
+				EC2226751AA155A30090C8E8 /* NSIndexPath.swift in Sources */,
+				EC7A282B1AD2F6A9008A55DF /* Intersection.swift in Sources */,
+				EC22266C1AA155A30090C8E8 /* layout.swift in Sources */,
+				EC0C677A1AB9DF1B0079ECE5 /* VecType.swift in Sources */,
+				EC9F6B3F1AACCB7A008D8178 /* event.swift in Sources */,
+				EC2226631AA155A30090C8E8 /* types.swift in Sources */,
+				EC2226A81AA155A30090C8E8 /* String.swift in Sources */,
+				EC8E70F71ABB85640072D6BC /* Resource.swift in Sources */,
+				EC8A72671AA7924B007B038E /* GLViewController.swift in Sources */,
+				EC2226801AA155A30090C8E8 /* GLLayer.swift in Sources */,
+				EC08D6621AD0870C00FCC955 /* trace.swift in Sources */,
+				ECF0DA271ABDE4DC00E060E2 /* dispatch.swift in Sources */,
+				EC7A28251AD2F4C3008A55DF /* Sphere.swift in Sources */,
+				EC2226661AA155A30090C8E8 /* CRColor.swift in Sources */,
+				EC22265D1AA155A30090C8E8 /* NSManagedObjectModel.swift in Sources */,
+				EC8D87881AC10A1900C38431 /* CollectionType.swift in Sources */,
+				EC9F6B3D1AAC95F4008D8178 /* Res.swift in Sources */,
+				ECAF1AA01AA7CA1E00CC819B /* render.swift in Sources */,
+				EC2226681AA155A30090C8E8 /* CREvent.swift in Sources */,
+				EC22266F1AA155A30090C8E8 /* QKResponder.swift in Sources */,
+				EC2226691AA155A30090C8E8 /* CRFont.swift in Sources */,
+				EC0C677C1AB9DF240079ECE5 /* vec-generated.swift in Sources */,
+				EC22266A1AA155A30090C8E8 /* CRResponder.swift in Sources */,
+				EC22266E1AA155A30090C8E8 /* NSLayoutConstraint.swift in Sources */,
+				EC2226821AA155A30090C8E8 /* GLShader.swift in Sources */,
+				EC2226A41AA155A30090C8E8 /* Character.swift in Sources */,
+				EC7A28271AD2F4DC008A55DF /* Plane.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC625974198EB20200876DFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC62597F198EB20200876DFC /* GlintTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC62597A198EB20200876DFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC62595F198EB20200876DFC /* Glint */;
+			targetProxy = EC625979198EB20200876DFC /* PBXContainerItemProxy */;
+		};
+		EC62598B198EBDBC00876DFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC62595F198EB20200876DFC /* Glint */;
+			targetProxy = EC62598A198EBDBC00876DFC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EC625980198EB20200876DFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					/usr/local/include,
+					/usr/local/include/freetype2,
+				);
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = src/bridge.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Debug;
+		};
+		EC625981198EB20200876DFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					/usr/local/include,
+					/usr/local/include/freetype2,
+				);
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = src/bridge.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		EC625983198EB20200876DFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				OTHER_LDFLAGS = (
+					"-lpng",
+					"-lfreetype",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EC625984198EB20200876DFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				OTHER_LDFLAGS = (
+					"-lpng",
+					"-lfreetype",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EC625986198EB20200876DFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Glint.app/Contents/MacOS/Glint";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = test/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		EC625987198EB20200876DFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Glint.app/Contents/MacOS/Glint";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = test/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC62595B198EB20200876DFC /* Build configuration list for PBXProject "glint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC625980198EB20200876DFC /* Debug */,
+				EC625981198EB20200876DFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC625982198EB20200876DFC /* Build configuration list for PBXNativeTarget "Glint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC625983198EB20200876DFC /* Debug */,
+				EC625984198EB20200876DFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC625985198EB20200876DFC /* Build configuration list for PBXNativeTarget "GlintTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC625986198EB20200876DFC /* Debug */,
+				EC625987198EB20200876DFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC625958198EB20200876DFC /* Project object */;
+}

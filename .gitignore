@@ -4,5 +4,9 @@
 # python
 __pycache__
 
+# xcode
+xcshareddata
+xcuserdata
+
 _bld
 _misc
