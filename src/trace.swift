@@ -4,7 +4,7 @@
 import Foundation
 
 
-let windowSize = V2I(600, 400)
+let windowSize = V2I(256, 256)
 let bufferSize = windowSize// * 2
 let aspect = Double(bufferSize.x) / Double(bufferSize.y)
 
@@ -15,15 +15,15 @@ let scene = {
   () -> Scene in
   return Scene(
     surfaces: [
-      //Plane(pos: V3D(-1, 0, 0), norm: V3D(-1, 0, 0), material: Material(isLight: false, col: V3D(0.8, 0.3, 0.3))), // red left.
-      //Plane(pos: V3D( 1, 0, 0), norm: V3D( 1, 0, 0), material: Material(isLight: false, col: V3D(0.3, 0.8, 0.3))), // green right.
-      //Plane(pos: V3D(0, -1, 0), norm: V3D(0, -1, 0), material: Material(isLight: false, col: V3D(0.3, 0.3, 0.8))), // blue floor.
-      //Plane(pos: V3D(0,  1, 0), norm: V3D(0,  1, 0), material: Material(isLight: true, col: V3D(0.5, 0.5, 0.5))), // gray ceil.
-      //Plane(pos: V3D(0, 0,  1), norm: V3D(0,  0, 1), material: Material(isLight: false, col: V3D(1, 1, 1))), // back.
+      //Plane(pos: V3D(-1, 0, 0), norm: V3D(1, 0, 0), material: Material(isLight: false, col: V3D(0.8, 0.3, 0.3))), // red left.
+      //Plane(pos: V3D( 1, 0, 0), norm: V3D(1, 0, 0), material: Material(isLight: false, col: V3D(0.3, 0.8, 0.3))), // green right.
+      //Plane(pos: V3D(0, -1, 0), norm: V3D(0, 1, 0), material: Material(isLight: false, col: V3D(0.3, 0.3, 0.8))), // blue floor.
+      //Plane(pos: V3D(0,  1, 0), norm: V3D(0, 1, 0), material: Material(isLight: true, col: V3D(0.5, 0.5, 0.5))), // gray ceil.
+      Plane(pos: V3D(0, 0,  1), norm: V3D(0,  0, 1), material: Material(isLight: false, col: V3D(1, 1, 1))), // back.
       
-      Sphere(pos: V3D(0, 0, 0),  rad: 0.4, material: Material(isLight: false, col:V3D(0.8, 0.8, 0.8))),
+      Sphere(pos: V3D(0, 0, 0),  rad: 0.4, material: Material(isLight: false, col:V3D(1, 1, 1))),
       
-      Sphere(pos: V3D(0, 1, 0), rad: 0.3, material: Material(isLight: true, col:V3D(1, 1, 1))), // center light.
+      Sphere(pos: V3D(0, 1, 0), rad: 0.3, material: Material(isLight: true, col:V3D(16, 16, 16))), // center light.
     ])
 }()
 
@@ -92,18 +92,24 @@ func schedulePass() {
   }
   dispatch_barrier_async(traceQueue) {
     func frac(num: I64, den: I64) -> F64 { return F64(num) / F64(den) }
-    println("time:\(appTime() - passTime)")
-    
-    println("bounces: \(bouncesTot); negs \(frac(bouncesNeg, bouncesTot))")
-    bouncesTot = 0
-    bouncesNeg = 0
-    
-    for i in 0..<rayMaxSteps {
-      let tot = max(1, raysTot[i])
-      println("rays:\(tot) lit:\(raysLit[i])|\(frac(raysLit[i], tot)) miss:\(raysMissed[i])|\(frac(raysMissed[i], tot))")
-    }
-    let raysTot0 = max(1, raysTot[0])
-    println("died:\(raysDied)|\(frac(raysDied, raysTot0))")
+    #if false
+      println("time:\(appTime() - passTime)")
+      
+      println("  bounces: \(bouncesTot); negs \(frac(bouncesNeg, bouncesTot))")
+      bouncesTot = 0
+      bouncesNeg = 0
+      
+      for i in 0..<rayMaxSteps {
+      let tot = raysTot[i]
+      let lit = raysLit[i]
+      let missed = raysMissed[i]
+      let bounced = tot - (lit + missed)
+      let den = max(1, tot)
+      println("  rays[\(i)]:\(tot) lit:\(lit)|\(frac(lit, den)) missed:\(missed)|\(frac(missed, den)) bounced:\(bounced)|\(frac(bounced, den))")
+      }
+      let raysTot0 = max(1, raysTot[0])
+      println("  died:\(raysDied)|\(frac(raysDied, raysTot0))")
+    #endif
     raysTot.zeroAll()
     raysLit.zeroAll()
     raysMissed.zeroAll()

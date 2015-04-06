@@ -18,11 +18,15 @@ class Plane: Surface {
   func intersection(ray: Ray) -> Intersection? {
     let num = dot(pos - ray.pos, norm)
     let den = dot(ray.dir, norm)
-    if den <= 0 { return nil }
     let dist = num / den
-    return Intersection(pos: ray.pos + ray.dir * (dist), norm: norm, dist: dist, surface: self)
+    if !isfinite(dist) || dist <= 0 { return nil }
+    // zero and tiny denominators result in infinity, indicating a ray parallel to the plane.
+    // negative distance indicates the ray is behind the plane.
+    // zero distance indicates that the ray originated on the plane,
+    // in which case it should not be captured.
+    let intersectPos = ray.pos + ray.dir * dist
+    let normSign = -sign(den) // plane is two-sided, so if ray and plane norm are pointing the same way, flip plane norm.
+    return Intersection(pos: intersectPos, norm: norm * normSign, dist: dist, surface: self)
   }
 }
-
-
 

@@ -29,7 +29,7 @@ func randD(min: Double, max: Double) -> Double {
 func randNormOld() -> V3D {
   let y = randD().sqrt
   let theta = acos(y)
-  let phi = M_2_PI * randD()
+  let phi = k_2_pi * randD()
   let x = sin(theta) * cos(phi)
   let z = sin(theta) * sin(phi)
   return V3D(x, y, z)
@@ -39,7 +39,7 @@ func randNorm(min: Double, max: Double) -> V3D {
   assert(min >= -1 && min <= 1)
   assert(max >= -1 && max <= 1)
   let x = randD(min, max)
-  let theta = randD(0, M_2_PI)
+  let theta = randD(0, k_2_pi)
   let w = sqrt(1 - x.sqr)
   return V3D(x, w * cos(theta), w * sin(theta))
 }
@@ -72,10 +72,9 @@ func bounce(ray: Ray, intersection: Intersection) -> Ray {
   
   #if false // crazy.
     let theta = acos(dot(reflection, norm)) // angle between normal and reflection.
-    let pi_2 = M_PI_2
-    let distortion = pi_2 * 0.5
-    let angle_min = max(-pi_2, theta - distortion)
-    let angle_max = min(pi_2, theta + distortion)
+    let distortion = k_2_pi * 0.5
+    let angle_min = max(-k_2_pi, theta - distortion)
+    let angle_max = min(k_2_pi, theta + distortion)
     let pitch = randD(angle_min, angle_max)
     let yaw = randD(-distortion, distortion)
     

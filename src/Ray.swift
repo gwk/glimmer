@@ -4,8 +4,10 @@
 import Foundation
 
 
-struct Ray {
+struct Ray: Printable {
   let pos: V3D
   let dir: V3D // normalized direction.
+  
+  var description: String { return "Ray(pos:\(pos) dir:\(dir))" }
 }
 
