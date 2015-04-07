@@ -19,29 +19,30 @@ let scene = {
       //Plane(pos: V3D( 1, 0, 0), norm: V3D(1, 0, 0), material: Material(isLight: false, col: V3D(0.3, 0.8, 0.3))), // green right.
       //Plane(pos: V3D(0, -1, 0), norm: V3D(0, 1, 0), material: Material(isLight: false, col: V3D(0.3, 0.3, 0.8))), // blue floor.
       //Plane(pos: V3D(0,  1, 0), norm: V3D(0, 1, 0), material: Material(isLight: true, col: V3D(0.5, 0.5, 0.5))), // gray ceil.
-      Plane(pos: V3D(0, 0,  1), norm: V3D(0,  0, 1), material: Material(isLight: false, col: V3D(1, 1, 1))), // back.
+      //Plane(pos: V3D(0, 0,  1), norm: V3D(0,  0, 1), material: Material(isLight: false, col: V3D(1, 1, 1))), // back.
       
       Sphere(pos: V3D(0, 0, 0),  rad: 0.4, material: Material(isLight: false, col:V3D(1, 1, 1))),
       
-      Sphere(pos: V3D(0, 1, 0), rad: 0.3, material: Material(isLight: true, col:V3D(16, 16, 16))), // center light.
+      Sphere(pos: V3D(0, 1, 0), rad: 0.3, material: Material(isLight: true, col:V3D(8, 8, 8))), // center light.
     ])
 }()
 
 
-let rayMaxSteps = 6
+let maxRaySteps = 6
+let maxPassCount = 1 << 14
 
 var bouncesTot: I64 = 0
 var bouncesNeg: I64 = 0 // bounces that result in an incorrect ray pointing into the internal hemisphere; should never happen.
 
-var raysTot = AtmCounters(count: rayMaxSteps)
-var raysLit = AtmCounters(count: rayMaxSteps) // rays that hit a light source.
-var raysMissed = AtmCounters(count: rayMaxSteps) // rays that miss all objects.
+var raysTot = AtmCounters(count: maxRaySteps)
+var raysLit = AtmCounters(count: maxRaySteps) // rays that hit a light source.
+var raysMissed = AtmCounters(count: maxRaySteps) // rays that miss all objects.
 var raysDied: I64 = 0
 
 func tracePrimaryRay(primaryRay: Ray) -> V3D {
   var ray = primaryRay
   var col = V3D(1, 1, 1)
-  for i in 0..<rayMaxSteps {
+  for i in 0..<maxRaySteps {
     raysTot.inc(i)
     if let intersection = scene.query(ray) {
       col = col * intersection.surface.material.col
@@ -83,6 +84,8 @@ func traceLine(j: Int) {
 let traceAttr = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_SERIAL, QOS_CLASS_DEFAULT, 0);
 let traceQueue = dispatch_queue_create("traceQueue", traceAttr)
 
+var passCount = 0
+
 func schedulePass() {
   let passTime = appTime()
   for j in 0..<bufferSize.y {
@@ -92,14 +95,14 @@ func schedulePass() {
   }
   dispatch_barrier_async(traceQueue) {
     func frac(num: I64, den: I64) -> F64 { return F64(num) / F64(den) }
-    #if false
-      println("time:\(appTime() - passTime)")
+    #if true
+      println("pass:\(passCount) time:\(appTime() - passTime)")
       
       println("  bounces: \(bouncesTot); negs \(frac(bouncesNeg, bouncesTot))")
       bouncesTot = 0
       bouncesNeg = 0
       
-      for i in 0..<rayMaxSteps {
+      for i in 0..<maxRaySteps {
       let tot = raysTot[i]
       let lit = raysLit[i]
       let missed = raysMissed[i]
@@ -114,7 +117,10 @@ func schedulePass() {
     raysLit.zeroAll()
     raysMissed.zeroAll()
     raysDied = 0
-    schedulePass()
+    passCount++
+    if passCount < maxPassCount {
+      schedulePass()
+    }
   }
 }
 
