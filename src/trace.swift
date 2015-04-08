@@ -12,14 +12,18 @@ let aspect = Double(bufferSize.x) / Double(bufferSize.y)
 
 let scene = {
   () -> Scene in
+  let rotL = M3D.rotY(k_pi / 8)
+  let rotR = M3D.rotY(-k_pi / 8)
+  let rotB = M3D.rotX(-k_pi / 8)
+  let rotT = M3D.rotX(k_pi / 8)
   return Scene(
     camera: Camera(pos: V3D(0, 0, -1), dir: V3D(0, 0, 1), vert: 0.5),
     surfaces: [
-      Plane(pos: V3D(-1, 0, 0), norm: V3D(1, 0, 0), material: Material(isLight: false, col: V3D(0.8, 0.3, 0.3))), // red left.
-      Plane(pos: V3D( 1, 0, 0), norm: V3D(1, 0, 0), material: Material(isLight: false, col: V3D(0.3, 0.8, 0.3))), // green right.
-      Plane(pos: V3D(0, -1, 0), norm: V3D(0, 1, 0), material: Material(isLight: false, col: V3D(0.3, 0.3, 0.8))), // blue floor.
-      Plane(pos: V3D(0,  1, 0), norm: V3D(0, 1, 0), material: Material(isLight: false, col: V3D(1, 1, 1))), // white ceil.
-      Plane(pos: V3D(0, 0,  1), norm: V3D(0,  0, 1), material: Material(isLight: false, col: V3D(1, 1, 1))), // back.
+      Plane(pos: V3D(-1, 0, 0), norm: rotL * V3D(1, 0, 0), material: Material(isLight: false, col: V3D(0.8, 0.3, 0.3))), // red left.
+      Plane(pos: V3D( 1, 0, 0), norm: rotR * V3D(-1, 0, 0), material: Material(isLight: false, col: V3D(0.3, 0.8, 0.3))), // green right.
+      Plane(pos: V3D(0, -1, 0), norm: rotB * V3D(0, 1, 0), material: Material(isLight: false, col: V3D(0.3, 0.3, 0.8))), // blue floor.
+      Plane(pos: V3D(0,  1, 0), norm: rotT * V3D(0, -1, 0), material: Material(isLight: false, col: V3D(1, 1, 1))), // white ceil.
+      Plane(pos: V3D(0, 0,  1), norm: V3D(0,  0, -1), material: Material(isLight: false, col: V3D(1, 1, 1))), // back.
       
       Sphere(pos: V3D(0, 0, 0),  rad: 0.4, material: Material(isLight: false, col:V3D(1, 1, 1))),
       
@@ -93,6 +97,9 @@ func schedulePass(buffer: PixelBuffer, passIndex: Int, passCount: Int, passCompl
   raysDied = 0
   bouncesTot = 0
   bouncesNeg = 0
+  let cam = scene.camera
+  let camRot = M3D.rot(V3D.unitZ, cam.dir)
+  let corner = camRot * V3D(cam.hori(buffer.size.aspect), cam.vert, 1)
   for j in 0..<bufferSize.y {
     let fj = (Double(j) / Double(bufferSize.y)) * 2 - 1
     dispatch_async(traceQueue) {
@@ -101,22 +108,20 @@ func schedulePass(buffer: PixelBuffer, passIndex: Int, passCount: Int, passCompl
   }
   dispatch_barrier_async(traceQueue) {
     assert(concTraceRows == 0)
-    func frac(num: I64, den: I64) -> F64 { return F64(num) / F64(den) }
+    func frac(num: I64, den: I64) -> F64 { return F64(num) / F64(max(1, den)) }
     #if true
       var lines = [
         "pass:\(passIndex) time:\(appTime() - passTime)",
-        "  bounces: \(bouncesTot); negs \(frac(bouncesNeg, bouncesTot))"
+        "  bounces: \(bouncesTot); negs:\(bouncesNeg)|\(frac(bouncesNeg, bouncesTot))"
       ]
       for i in 0..<maxRaySteps {
         let tot = raysTot[i]
         let lit = raysLit[i]
         let missed = raysMissed[i]
         let bounced = tot - (lit + missed)
-        let den = max(1, tot)
-        lines.append("  rays[\(i)]:\(tot) lit:\(lit)|\(frac(lit, den)) missed:\(missed)|\(frac(missed, den)) bounced:\(bounced)|\(frac(bounced, den))")
+        lines.append("  rays[\(i)]:\(tot) lit:\(lit)|\(frac(lit, tot)) missed:\(missed)|\(frac(missed, tot)) bounced:\(bounced)|\(frac(bounced, tot))")
       }
-      let raysTot0 = max(1, raysTot[0])
-      lines.append("  died:\(raysDied)|\(frac(raysDied, raysTot0))")
+      lines.append("  died:\(raysDied)|\(frac(raysDied, raysTot[0]))")
       outLLA(lines)
     #endif
     dispatch_async(dispatch_get_main_queue(), passCompleteAction)

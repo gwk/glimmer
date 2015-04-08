@@ -58,6 +58,12 @@
 		EC0FDD231AD418FC0017A839 /* AreaBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0FDD221AD418FC0017A839 /* AreaBuffer.swift */; };
 		EC0FDD241AD41ED70017A839 /* AreaBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0FDD221AD418FC0017A839 /* AreaBuffer.swift */; };
 		EC17DAF11AD578EB00BB82E4 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC17DAF01AD578EB00BB82E4 /* Camera.swift */; };
+		EC17DAF21AD5CAE000BB82E4 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A00581AB74183003575E3 /* Font.swift */; };
+		EC17DAF31AD5CAE000BB82E4 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9F6B411AACCC7E008D8178 /* Image.m */; };
+		EC17DAF41AD5CAE000BB82E4 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F6B421AACCC7E008D8178 /* Image.swift */; };
+		EC17DAF51AD5CAE000BB82E4 /* img.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A005B1AB74183003575E3 /* img.swift */; };
+		EC17DAF61AD5CAE000BB82E4 /* PixFmt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226361AA155A30090C8E8 /* PixFmt.swift */; };
+		EC17DAF71AD5CAF600BB82E4 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC17DAF01AD578EB00BB82E4 /* Camera.swift */; };
 		EC22265D1AA155A30090C8E8 /* NSManagedObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226041AA155A20090C8E8 /* NSManagedObjectModel.swift */; };
 		EC22265E1AA155A30090C8E8 /* arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226061AA155A20090C8E8 /* arithmetic.swift */; };
 		EC22265F1AA155A30090C8E8 /* func.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226081AA155A20090C8E8 /* func.swift */; };
@@ -107,7 +113,6 @@
 		EC7A00561AB7414B003575E3 /* GLTextPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A00531AB7414B003575E3 /* GLTextPage.swift */; };
 		EC7A00571AB7414B003575E3 /* GLTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A00541AB7414B003575E3 /* GLTextView.swift */; };
 		EC7A005C1AB74183003575E3 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A00581AB74183003575E3 /* Font.swift */; };
-		EC7A005D1AB74183003575E3 /* glyphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A00591AB74183003575E3 /* glyphs.swift */; };
 		EC7A005E1AB74183003575E3 /* img.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A005B1AB74183003575E3 /* img.swift */; };
 		EC7A281B1AD2CE54008A55DF /* atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A281A1AD2CE54008A55DF /* atomic.swift */; };
 		EC7A281D1AD2F0D5008A55DF /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A281C1AD2F0D5008A55DF /* Time.swift */; };
@@ -237,7 +242,6 @@
 		EC7A00531AB7414B003575E3 /* GLTextPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLTextPage.swift; sourceTree = "<group>"; };
 		EC7A00541AB7414B003575E3 /* GLTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLTextView.swift; sourceTree = "<group>"; };
 		EC7A00581AB74183003575E3 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
-		EC7A00591AB74183003575E3 /* glyphs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = glyphs.swift; sourceTree = "<group>"; };
 		EC7A005A1AB74183003575E3 /* img.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = img.h; sourceTree = "<group>"; };
 		EC7A005B1AB74183003575E3 /* img.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = img.swift; sourceTree = "<group>"; };
 		EC7A281A1AD2CE54008A55DF /* atomic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = atomic.swift; sourceTree = "<group>"; };
@@ -421,7 +425,6 @@
 			isa = PBXGroup;
 			children = (
 				EC7A00581AB74183003575E3 /* Font.swift */,
-				EC7A00591AB74183003575E3 /* glyphs.swift */,
 				EC9F6B401AACCC7E008D8178 /* Image.h */,
 				EC9F6B411AACCC7E008D8178 /* Image.m */,
 				EC9F6B421AACCC7E008D8178 /* Image.swift */,
@@ -705,6 +708,12 @@
 				EC0FDD201AD416000017A839 /* NSObject.swift in Sources */,
 				EC0FDD211AD416000017A839 /* NSOutputStream.swift in Sources */,
 				EC0FDD241AD41ED70017A839 /* AreaBuffer.swift in Sources */,
+				EC17DAF21AD5CAE000BB82E4 /* Font.swift in Sources */,
+				EC17DAF31AD5CAE000BB82E4 /* Image.m in Sources */,
+				EC17DAF41AD5CAE000BB82E4 /* Image.swift in Sources */,
+				EC17DAF51AD5CAE000BB82E4 /* img.swift in Sources */,
+				EC17DAF61AD5CAE000BB82E4 /* PixFmt.swift in Sources */,
+				EC17DAF71AD5CAF600BB82E4 /* Camera.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,7 +749,6 @@
 				EC7A00571AB7414B003575E3 /* GLTextView.swift in Sources */,
 				EC2226651AA155A30090C8E8 /* CoreGraphics.swift in Sources */,
 				EC2226731AA155A30090C8E8 /* NSError.swift in Sources */,
-				EC7A005D1AB74183003575E3 /* glyphs.swift in Sources */,
 				EC2226A61AA155A30090C8E8 /* Int.swift in Sources */,
 				EC7A005E1AB74183003575E3 /* img.swift in Sources */,
 				EC7A282D1AD2F709008A55DF /* Box.swift in Sources */,
@@ -890,6 +898,10 @@
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-lpng",
+					"-lfreetype",
+				);
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = src/bridge.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -929,6 +941,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-lpng",
+					"-lfreetype",
+				);
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = src/bridge.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -941,10 +957,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				OTHER_LDFLAGS = (
-					"-lpng",
-					"-lfreetype",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -955,10 +967,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				OTHER_LDFLAGS = (
-					"-lpng",
-					"-lfreetype",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
