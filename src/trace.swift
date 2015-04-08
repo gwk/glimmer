@@ -3,12 +3,12 @@
 
 import Foundation
 
+let maxRaySteps = 6
+let tracePasses = 1 << 12
 
 let windowSize = V2I(256, 256)
 let bufferSize = V2I(256, 256) //windowSize// * 2
 let aspect = Double(bufferSize.x) / Double(bufferSize.y)
-
-let traceBuffer = PixelBuffer()
 
 let scene = {
   () -> Scene in
@@ -18,7 +18,7 @@ let scene = {
       //Plane(pos: V3D( 1, 0, 0), norm: V3D(1, 0, 0), material: Material(isLight: false, col: V3D(0.3, 0.8, 0.3))), // green right.
       //Plane(pos: V3D(0, -1, 0), norm: V3D(0, 1, 0), material: Material(isLight: false, col: V3D(0.3, 0.3, 0.8))), // blue floor.
       //Plane(pos: V3D(0,  1, 0), norm: V3D(0, 1, 0), material: Material(isLight: true, col: V3D(0.5, 0.5, 0.5))), // gray ceil.
-      //Plane(pos: V3D(0, 0,  1), norm: V3D(0,  0, 1), material: Material(isLight: false, col: V3D(1, 1, 1))), // back.
+      Plane(pos: V3D(0, 0,  1), norm: V3D(0,  0, 1), material: Material(isLight: false, col: V3D(1, 1, 1))), // back.
       
       Sphere(pos: V3D(0, 0, 0),  rad: 0.4, material: Material(isLight: false, col:V3D(1, 1, 1))),
       
@@ -26,8 +26,6 @@ let scene = {
     ])
 }()
 
-
-let maxRaySteps = 6
 
 let raysTot = AtmCounters(count: maxRaySteps)
 let raysLit = AtmCounters(count: maxRaySteps) // rays that hit a light source.
@@ -63,10 +61,10 @@ func tracePrimaryRay(primaryRay: Ray) -> V3D {
 }
 
 
-var concTraceLines: I64 = 0
+var concTraceRows: I64 = 0
 
 func traceRow(buffer: PixelBuffer, j: Int, fj: Double) {
-  atmInc(&concTraceLines)
+  atmInc(&concTraceRows)
   for i in 0..<bufferSize.x {
     let fi = ((Double(i) / Double(bufferSize.x)) * 2 - 1) * aspect
     let primary = Ray(pos: V3D(fi, fj, -1), dir: V3D(0, 0, 1))
@@ -77,7 +75,7 @@ func traceRow(buffer: PixelBuffer, j: Int, fj: Double) {
       buffer.setEl(i, j, Pixel(col: col))
     #endif
   }
-  atmDec(&concTraceLines)
+  atmDec(&concTraceRows)
 }
 
 
@@ -86,7 +84,7 @@ let traceQueue = dispatch_queue_create("com.gonkus.glint.traceQueue", traceAttr)
 // concurrency is not working; currently crashes in various places in -Onone mode.
 // note: remember to turn off compiler optimizations when working on this.
 
-func schedulePass(buffer: PixelBuffer, passIndex: Int, passCount: Int) {
+func schedulePass(buffer: PixelBuffer, passIndex: Int, passCount: Int, passCompleteAction: Action) {
   let passTime = appTime()
   raysTot.zeroAll()
   raysLit.zeroAll()
@@ -101,7 +99,7 @@ func schedulePass(buffer: PixelBuffer, passIndex: Int, passCount: Int) {
     }
   }
   dispatch_barrier_async(traceQueue) {
-    assert(concTraceLines == 0)
+    assert(concTraceRows == 0)
     func frac(num: I64, den: I64) -> F64 { return F64(num) / F64(den) }
     #if true
       var lines = [
@@ -120,17 +118,20 @@ func schedulePass(buffer: PixelBuffer, passIndex: Int, passCount: Int) {
       lines.append("  died:\(raysDied)|\(frac(raysDied, raysTot0))")
       outLLA(lines)
     #endif
+    dispatch_async(dispatch_get_main_queue(), passCompleteAction)
     if passIndex < passCount {
-      schedulePass(buffer, passIndex + 1, passCount)
+      schedulePass(buffer, passIndex + 1, passCount, passCompleteAction)
     }
   }
 }
 
 
-func runTracer() {
+func runTracer(passCompleteAction: Action) -> PixelBuffer {
+  let traceBuffer = PixelBuffer()
   traceBuffer.resize(bufferSize, val: Pixel())
   dispatch_async(traceQueue) {
-    schedulePass(traceBuffer, 0, 1 << 8)
+    schedulePass(traceBuffer, 0, tracePasses, passCompleteAction)
   }
+  return traceBuffer
 }
 

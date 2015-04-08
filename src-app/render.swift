@@ -12,10 +12,6 @@ import Foundation
 #endif
 
 
-let traceTex = GLTexture()
-let texBuffer = AreaBuffer<(U8, U8, U8)>()
-
-
 let program = GLProgram(name: "program", sources: [
   "varying vec2 texPos;",
   
@@ -35,13 +31,19 @@ let program = GLProgram(name: "program", sources: [
   ])
 
 
+var traceBuffer: PixelBuffer! = nil
+let traceTex = GLTexture()
+let texBuffer = AreaBuffer<(U8, U8, U8)>()
+
 var needsSetup = true
 func setup() {
   if !needsSetup {
     return
   }
   needsSetup = false
-  runTracer()
+  traceBuffer = runTracer() {
+    appDelegate.viewController.glView.layer!.setNeedsDisplay()
+  }
   texBuffer.resize(traceBuffer.size, val: (0, 0, 0)) // after runTracer sets up traceBuffer, resize to match.
 }
 
@@ -49,7 +51,7 @@ func setup() {
 var renderCounter = 0
 
 func render(scale: F32, sizePt: V2S, time: Time) {
-  println("render: \(renderCounter): \(concTraceLines)")
+  println("render: \(renderCounter); concurrent calls to traceRow: \(concTraceRows)")
   glClearColor(0, 0, 0, 0)
   glClear(GLbitfield(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT))
   setup()

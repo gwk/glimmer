@@ -12,7 +12,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   override init() {}
   
   func applicationDidFinishLaunching(note: NSNotification) {
-
+    
     let processInfo = NSProcessInfo.processInfo()
     
     // menu bar.
@@ -38,7 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     viewController.title = "Glint"
     viewController.render = render
     viewController.handleEvent = handleEvent
-    viewController.glView.glLayer.asynchronous = true
+    viewController.glView.glLayer.asynchronous = false
     
     window = NSWindow(
       contentRect: CGRectZero, // gets clobbered by controller view initial size so why bother.

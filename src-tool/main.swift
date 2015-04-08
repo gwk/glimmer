@@ -9,7 +9,7 @@ import Foundation
 initAppLaunchSysTime()
 
 func main() { // this wrapper prevents noreturn warning on dispatch_main.
-  runTracer()
+  let traceBuffer = runTracer() {}
   dispatch_main()
 }
 
