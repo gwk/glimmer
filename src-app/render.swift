@@ -12,9 +12,8 @@ import Foundation
 #endif
 
 
-let bufferTex = GLTexture()
-let renderBufferLen = bufferLen  * 3 // RGB.
-var renderBuffer = [U8](count: renderBufferLen, repeatedValue: 0)
+let traceTex = GLTexture()
+let texBuffer = AreaBuffer<(U8, U8, U8)>()
 
 
 let program = GLProgram(name: "program", sources: [
@@ -43,31 +42,27 @@ func setup() {
   }
   needsSetup = false
   runTracer()
+  texBuffer.resize(traceBuffer.size, val: (0, 0, 0)) // after runTracer sets up traceBuffer, resize to match.
 }
 
 
 var renderCounter = 0
 
 func render(scale: F32, sizePt: V2S, time: Time) {
-  //println("render: \(renderCounter)")
+  println("render: \(renderCounter): \(concTraceLines)")
   glClearColor(0, 0, 0, 0)
   glClear(GLbitfield(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT))
   setup()
   
   // copy trace buffer to render buffer.
-  for j in 0..<bufferSize.y {
-    for i in 0..<bufferSize.x {
-      let off = (bufferSize.x * j + i)
-      let (r, g, b) = traceBuffer[off].colU8
-      renderBuffer[3 * off + 0] = r
-      renderBuffer[3 * off + 1] = g
-      renderBuffer[3 * off + 2] = b
-    }
+  assert(texBuffer.count == traceBuffer.count)
+  for i in 0..<texBuffer.count {
+    texBuffer[i] = traceBuffer[i].colU8
   }
-  renderBuffer.withUnsafeBufferPointer() {
+  texBuffer.withUnsafeBufferPointer() {
     (bp) -> () in
-    bufferTex.update(w: bufferSize.x, h: bufferSize.y, fmt: .RGB, dataFmt: .RGB, dataType: .U8, data: bp.baseAddress)
-    bufferTex.setFilter(GLenum(GL_NEAREST))
+    traceTex.update(w: bufferSize.x, h: bufferSize.y, fmt: .RGB, dataFmt: .RGB, dataType: .U8, data: bp.baseAddress)
+    traceTex.setFilter(GLenum(GL_NEAREST))
   }
 
   // triangle fan starting from upper left, counterclockwise.
@@ -76,6 +71,6 @@ func render(scale: F32, sizePt: V2S, time: Time) {
   program.bindAttr("glPos", stride: sizeof(V2S), V2S: verts, offset: 0)
   glDrawArrays(GLenum(GL_TRIANGLE_FAN), 0, GLint(verts.count * 2))
   glAssert()
-  //renderCounter++
+  renderCounter++
 }
 

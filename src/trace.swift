@@ -5,11 +5,10 @@ import Foundation
 
 
 let windowSize = V2I(256, 256)
-let bufferSize = windowSize// * 2
+let bufferSize = V2I(256, 256) //windowSize// * 2
 let aspect = Double(bufferSize.x) / Double(bufferSize.y)
 
-let bufferLen = bufferSize.x * bufferSize.y
-var traceBuffer = [Pixel](count: bufferLen, repeatedValue: Pixel())
+let traceBuffer = PixelBuffer()
 
 let scene = {
   () -> Scene in
@@ -29,15 +28,14 @@ let scene = {
 
 
 let maxRaySteps = 6
-let maxPassCount = 1 << 14
 
+let raysTot = AtmCounters(count: maxRaySteps)
+let raysLit = AtmCounters(count: maxRaySteps) // rays that hit a light source.
+let raysMissed = AtmCounters(count: maxRaySteps) // rays that miss all objects.
+var raysDied: I64 = 0
 var bouncesTot: I64 = 0
 var bouncesNeg: I64 = 0 // bounces that result in an incorrect ray pointing into the internal hemisphere; should never happen.
 
-var raysTot = AtmCounters(count: maxRaySteps)
-var raysLit = AtmCounters(count: maxRaySteps) // rays that hit a light source.
-var raysMissed = AtmCounters(count: maxRaySteps) // rays that miss all objects.
-var raysDied: I64 = 0
 
 func tracePrimaryRay(primaryRay: Ray) -> V3D {
   var ray = primaryRay
@@ -65,69 +63,74 @@ func tracePrimaryRay(primaryRay: Ray) -> V3D {
 }
 
 
-func traceLine(j: Int) {
-  let fj = (Double(j) / Double(bufferSize.y)) * 2 - 1
+var concTraceLines: I64 = 0
+
+func traceRow(buffer: PixelBuffer, j: Int, fj: Double) {
+  atmInc(&concTraceLines)
   for i in 0..<bufferSize.x {
     let fi = ((Double(i) / Double(bufferSize.x)) * 2 - 1) * aspect
     let primary = Ray(pos: V3D(fi, fj, -1), dir: V3D(0, 0, 1))
     let col = tracePrimaryRay(primary)
-    let off = (j * bufferSize.x + i)
     #if true // accumulation.
-      traceBuffer[off] = Pixel(prev: traceBuffer[off], col: col)
+      buffer.setEl(i, j, Pixel(prev: buffer.el(i, j), col: col))
     #else // no accumulation.
-      traceBuffer[off] = Pixel(sample: col)
+      buffer.setEl(i, j, Pixel(col: col))
     #endif
   }
+  atmDec(&concTraceLines)
 }
 
 
-let traceAttr = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_SERIAL, QOS_CLASS_DEFAULT, 0);
-let traceQueue = dispatch_queue_create("traceQueue", traceAttr)
+let traceAttr = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_SERIAL, QOS_CLASS_UTILITY, 0);
+let traceQueue = dispatch_queue_create("com.gonkus.glint.traceQueue", traceAttr)
+// concurrency is not working; currently crashes in various places in -Onone mode.
+// note: remember to turn off compiler optimizations when working on this.
 
-var passCount = 0
-
-func schedulePass() {
+func schedulePass(buffer: PixelBuffer, passIndex: Int, passCount: Int) {
   let passTime = appTime()
+  raysTot.zeroAll()
+  raysLit.zeroAll()
+  raysMissed.zeroAll()
+  raysDied = 0
+  bouncesTot = 0
+  bouncesNeg = 0
   for j in 0..<bufferSize.y {
+    let fj = (Double(j) / Double(bufferSize.y)) * 2 - 1
     dispatch_async(traceQueue) {
-      traceLine(j)
+      traceRow(buffer, j, fj)
     }
   }
   dispatch_barrier_async(traceQueue) {
+    assert(concTraceLines == 0)
     func frac(num: I64, den: I64) -> F64 { return F64(num) / F64(den) }
     #if true
-      println("pass:\(passCount) time:\(appTime() - passTime)")
-      
-      println("  bounces: \(bouncesTot); negs \(frac(bouncesNeg, bouncesTot))")
-      bouncesTot = 0
-      bouncesNeg = 0
-      
+      var lines = [
+        "pass:\(passIndex) time:\(appTime() - passTime)",
+        "  bounces: \(bouncesTot); negs \(frac(bouncesNeg, bouncesTot))"
+      ]
       for i in 0..<maxRaySteps {
-      let tot = raysTot[i]
-      let lit = raysLit[i]
-      let missed = raysMissed[i]
-      let bounced = tot - (lit + missed)
-      let den = max(1, tot)
-      println("  rays[\(i)]:\(tot) lit:\(lit)|\(frac(lit, den)) missed:\(missed)|\(frac(missed, den)) bounced:\(bounced)|\(frac(bounced, den))")
+        let tot = raysTot[i]
+        let lit = raysLit[i]
+        let missed = raysMissed[i]
+        let bounced = tot - (lit + missed)
+        let den = max(1, tot)
+        lines.append("  rays[\(i)]:\(tot) lit:\(lit)|\(frac(lit, den)) missed:\(missed)|\(frac(missed, den)) bounced:\(bounced)|\(frac(bounced, den))")
       }
       let raysTot0 = max(1, raysTot[0])
-      println("  died:\(raysDied)|\(frac(raysDied, raysTot0))")
+      lines.append("  died:\(raysDied)|\(frac(raysDied, raysTot0))")
+      outLLA(lines)
     #endif
-    raysTot.zeroAll()
-    raysLit.zeroAll()
-    raysMissed.zeroAll()
-    raysDied = 0
-    passCount++
-    if passCount < maxPassCount {
-      schedulePass()
+    if passIndex < passCount {
+      schedulePass(buffer, passIndex + 1, passCount)
     }
   }
 }
 
 
 func runTracer() {
+  traceBuffer.resize(bufferSize, val: Pixel())
   dispatch_async(traceQueue) {
-    schedulePass()
+    schedulePass(traceBuffer, 0, 1 << 8)
   }
 }
 

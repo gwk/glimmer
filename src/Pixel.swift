@@ -13,8 +13,8 @@ struct Pixel {
     count = 0
   }
   
-  init(sample: V3D) {
-    col = sample
+  init(col: V3D) {
+    self.col = col
     count = 1
   }
   
@@ -30,3 +30,6 @@ struct Pixel {
     return (U8(c.x * 255), U8(c.y * 255), U8(c.z * 255))
   }
 }
+
+
+typealias PixelBuffer = AreaBuffer<Pixel>
