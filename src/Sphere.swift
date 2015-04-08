@@ -18,7 +18,7 @@ class Sphere: Surface {
   }
   
   func intersectionDist(ray: Ray) -> Double? {
-    let thing = dot(ray.dir, (ray.pos - pos))
+    let thing = ray.dir.dot(ray.pos - pos)
     let discriminant = thing.sqr - (ray.pos - pos).sqrLen + rad.sqr
     if discriminant <= 0 { return nil }
     // discriminant < 0 means a clean miss.

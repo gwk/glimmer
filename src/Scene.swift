@@ -5,6 +5,7 @@ import Foundation
 
 
 struct Scene {
+  let camera: Camera
   let surfaces: [Surface]
   
   func query(ray: Ray) -> Intersection? {

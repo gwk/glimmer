@@ -13,11 +13,12 @@ let aspect = Double(bufferSize.x) / Double(bufferSize.y)
 let scene = {
   () -> Scene in
   return Scene(
+    camera: Camera(pos: V3D(0, 0, -1), dir: V3D(0, 0, 1), vert: 0.5),
     surfaces: [
-      //Plane(pos: V3D(-1, 0, 0), norm: V3D(1, 0, 0), material: Material(isLight: false, col: V3D(0.8, 0.3, 0.3))), // red left.
-      //Plane(pos: V3D( 1, 0, 0), norm: V3D(1, 0, 0), material: Material(isLight: false, col: V3D(0.3, 0.8, 0.3))), // green right.
-      //Plane(pos: V3D(0, -1, 0), norm: V3D(0, 1, 0), material: Material(isLight: false, col: V3D(0.3, 0.3, 0.8))), // blue floor.
-      //Plane(pos: V3D(0,  1, 0), norm: V3D(0, 1, 0), material: Material(isLight: true, col: V3D(0.5, 0.5, 0.5))), // gray ceil.
+      Plane(pos: V3D(-1, 0, 0), norm: V3D(1, 0, 0), material: Material(isLight: false, col: V3D(0.8, 0.3, 0.3))), // red left.
+      Plane(pos: V3D( 1, 0, 0), norm: V3D(1, 0, 0), material: Material(isLight: false, col: V3D(0.3, 0.8, 0.3))), // green right.
+      Plane(pos: V3D(0, -1, 0), norm: V3D(0, 1, 0), material: Material(isLight: false, col: V3D(0.3, 0.3, 0.8))), // blue floor.
+      Plane(pos: V3D(0,  1, 0), norm: V3D(0, 1, 0), material: Material(isLight: false, col: V3D(1, 1, 1))), // white ceil.
       Plane(pos: V3D(0, 0,  1), norm: V3D(0,  0, 1), material: Material(isLight: false, col: V3D(1, 1, 1))), // back.
       
       Sphere(pos: V3D(0, 0, 0),  rad: 0.4, material: Material(isLight: false, col:V3D(1, 1, 1))),
@@ -48,7 +49,7 @@ func tracePrimaryRay(primaryRay: Ray) -> V3D {
       }
       ray = bounce(ray, intersection)
       atmInc(&bouncesTot)
-      if dot(intersection.norm, ray.dir) < 0 {
+      if intersection.norm.dot(ray.dir) < 0 {
         atmInc(&bouncesNeg)
       }
     } else { // ray missed all objects in scene.

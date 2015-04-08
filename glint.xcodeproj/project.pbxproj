@@ -57,6 +57,7 @@
 		EC0FDD211AD416000017A839 /* NSOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226241AA155A20090C8E8 /* NSOutputStream.swift */; };
 		EC0FDD231AD418FC0017A839 /* AreaBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0FDD221AD418FC0017A839 /* AreaBuffer.swift */; };
 		EC0FDD241AD41ED70017A839 /* AreaBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0FDD221AD418FC0017A839 /* AreaBuffer.swift */; };
+		EC17DAF11AD578EB00BB82E4 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC17DAF01AD578EB00BB82E4 /* Camera.swift */; };
 		EC22265D1AA155A30090C8E8 /* NSManagedObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226041AA155A20090C8E8 /* NSManagedObjectModel.swift */; };
 		EC22265E1AA155A30090C8E8 /* arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226061AA155A20090C8E8 /* arithmetic.swift */; };
 		EC22265F1AA155A30090C8E8 /* func.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226081AA155A20090C8E8 /* func.swift */; };
@@ -176,6 +177,7 @@
 		EC0FDCE61AD414710017A839 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EC0FDCED1AD4158F0017A839 /* glint-tool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "glint-tool"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC0FDD221AD418FC0017A839 /* AreaBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaBuffer.swift; sourceTree = "<group>"; };
+		EC17DAF01AD578EB00BB82E4 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		EC2226041AA155A20090C8E8 /* NSManagedObjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectModel.swift; sourceTree = "<group>"; };
 		EC2226061AA155A20090C8E8 /* arithmetic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = arithmetic.swift; sourceTree = "<group>"; };
 		EC2226081AA155A20090C8E8 /* func.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = func.swift; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 			children = (
 				EC7A282C1AD2F709008A55DF /* Box.swift */,
 				EC4852D519CCCFCE00A7B422 /* bridge.h */,
+				EC17DAF01AD578EB00BB82E4 /* Camera.swift */,
 				EC9F6B3E1AACCB7A008D8178 /* event.swift */,
 				EC7A282A1AD2F6A9008A55DF /* Intersection.swift */,
 				EC7A28221AD2F4AF008A55DF /* Material.swift */,
@@ -726,6 +729,7 @@
 				EC8E70F91ABBBEE00072D6BC /* Process.swift in Sources */,
 				EC0FDCE71AD414710017A839 /* main.swift in Sources */,
 				EC2226861AA155A30090C8E8 /* PixFmt.swift in Sources */,
+				EC17DAF11AD578EB00BB82E4 /* Camera.swift in Sources */,
 				EC625968198EB20200876DFC /* AppDelegate.swift in Sources */,
 				EC9F6B441AACCC7E008D8178 /* Image.swift in Sources */,
 				EC2226641AA155A30090C8E8 /* util.swift in Sources */,

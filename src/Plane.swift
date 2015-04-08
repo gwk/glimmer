@@ -16,8 +16,8 @@ class Plane: Surface {
   }
   
   func intersection(ray: Ray) -> Intersection? {
-    let num = dot(pos - ray.pos, norm)
-    let den = dot(ray.dir, norm)
+    let num = norm.dot(pos - ray.pos)
+    let den = norm.dot(ray.dir)
     let dist = num / den
     if !isfinite(dist) || dist <= 0 { return nil }
     // zero and tiny denominators result in infinity, indicating a ray parallel to the plane.

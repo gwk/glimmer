@@ -53,22 +53,21 @@ func bounce(ray: Ray, intersection: Intersection) -> Ray {
   let norm = intersection.norm
   
   #if false // perfect specularity.
-    let reflection = ray.dir - norm * 2 * dot(ray.dir, norm)
-    return Ray(pos: intersection.pos, dir: reflection)
-    #elseif false // perfect lambertian (diffuse).
+    let out = ray.dir - norm * 2 * ray.dir.dot(norm)
+    #elseif false // unfinished diffusion.
     let axis = V3D(1, 0, 0)
     let randGlobal = randNorm(0, 1) // hemisphere in pos x.
     let theta = acos(dot(axis, randGlobal))
     let c = cross(axis, randGlobal)
     let rot = M3DRot(theta, c)
     let out = rot * randGlobal
-    #elseif true // totally random, but invert if normal.
+    #else // perfectly diffuse.
     var out = randNorm(-1, 1)
-    if dot(norm, out) < 0 {
+    if norm.dot(out) < 0 {
       out = out * -1
     }
-    return Ray(pos: intersection.pos, dir: out)
   #endif
+  return Ray(pos: intersection.pos, dir: out)
   
   #if false // crazy.
     let theta = acos(dot(reflection, norm)) // angle between normal and reflection.
