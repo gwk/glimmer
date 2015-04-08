@@ -3,26 +3,21 @@
 
 import Foundation
 
-let maxRaySteps = 6
+let maxRaySteps = 4
 let tracePasses = 1 << 12
 
 let windowSize = V2I(256, 256)
 let bufferSize = V2I(256, 256) //windowSize// * 2
-let aspect = Double(bufferSize.x) / Double(bufferSize.y)
 
 let scene = {
   () -> Scene in
-  let rotL = M3D.rotY(k_pi / 8)
-  let rotR = M3D.rotY(-k_pi / 8)
-  let rotB = M3D.rotX(-k_pi / 8)
-  let rotT = M3D.rotX(k_pi / 8)
   return Scene(
-    camera: Camera(pos: V3D(0, 0, -1), dir: V3D(0, 0, 1), vert: 0.5),
+    camera: Camera(pos: V3D(0.5, 0.5, -2.5), dir: V3D(-0.2, -0.2, 1), vert: 0.5),
     surfaces: [
-      Plane(pos: V3D(-1, 0, 0), norm: rotL * V3D(1, 0, 0), material: Material(isLight: false, col: V3D(0.8, 0.3, 0.3))), // red left.
-      Plane(pos: V3D( 1, 0, 0), norm: rotR * V3D(-1, 0, 0), material: Material(isLight: false, col: V3D(0.3, 0.8, 0.3))), // green right.
-      Plane(pos: V3D(0, -1, 0), norm: rotB * V3D(0, 1, 0), material: Material(isLight: false, col: V3D(0.3, 0.3, 0.8))), // blue floor.
-      Plane(pos: V3D(0,  1, 0), norm: rotT * V3D(0, -1, 0), material: Material(isLight: false, col: V3D(1, 1, 1))), // white ceil.
+      Plane(pos: V3D(-1, 0, 0), norm: V3D(1, 0, 0), material: Material(isLight: false, col: V3D(0.8, 0.3, 0.3))), // red left.
+      Plane(pos: V3D( 1, 0, 0), norm: V3D(-1, 0, 0), material: Material(isLight: false, col: V3D(0.3, 0.8, 0.3))), // green right.
+      Plane(pos: V3D(0, -1, 0), norm: V3D(0, 1, 0), material: Material(isLight: false, col: V3D(0.3, 0.3, 0.8))), // blue floor.
+      Plane(pos: V3D(0,  1, 0), norm: V3D(0, -1, 0), material: Material(isLight: false, col: V3D(1, 1, 1))), // white ceil.
       Plane(pos: V3D(0, 0,  1), norm: V3D(0,  0, -1), material: Material(isLight: false, col: V3D(1, 1, 1))), // back.
       
       Sphere(pos: V3D(0, 0, 0),  rad: 0.4, material: Material(isLight: false, col:V3D(1, 1, 1))),
@@ -68,11 +63,11 @@ func tracePrimaryRay(primaryRay: Ray) -> V3D {
 
 var concTraceRows: I64 = 0
 
-func traceRow(buffer: PixelBuffer, j: Int, fj: Double) {
+func traceRow(buffer: PixelBuffer, j: Int, camPos: V3D, rowL: V3D, rowR: V3D) {
   atmInc(&concTraceRows)
-  for i in 0..<bufferSize.x {
-    let fi = ((Double(i) / Double(bufferSize.x)) * 2 - 1) * aspect
-    let primary = Ray(pos: V3D(fi, fj, -1), dir: V3D(0, 0, 1))
+  for i in 0..<buffer.size.x {
+    let ti = ((Double(i) + 0.5) / Double(buffer.size.x))
+    let primary = Ray(pos: camPos, dir: rowL.lerp(rowR, ti).norm)
     let col = tracePrimaryRay(primary)
     #if true // accumulation.
       buffer.setEl(i, j, Pixel(prev: buffer.el(i, j), col: col))
@@ -99,11 +94,18 @@ func schedulePass(buffer: PixelBuffer, passIndex: Int, passCount: Int, passCompl
   bouncesNeg = 0
   let cam = scene.camera
   let camRot = M3D.rot(V3D.unitZ, cam.dir)
-  let corner = camRot * V3D(cam.hori(buffer.size.aspect), cam.vert, 1)
-  for j in 0..<bufferSize.y {
-    let fj = (Double(j) / Double(bufferSize.y)) * 2 - 1
+  let cx = cam.hori(buffer.size.aspect)
+  let cy = cam.vert
+  let cornerLB = camRot * V3D(-cx, -cy, 1)
+  let cornerLT = camRot * V3D(-cx, cy, 1)
+  let cornerRB = camRot * V3D(cx, -cy, 1)
+  let cornerRT = camRot * V3D(cx, cy, 1)
+  for j in 0..<buffer.size.y {
+    let tj = ((Double(j) + 0.5) / Double(buffer.size.y))
+    let rowL = cornerLB.lerp(cornerLT, tj)
+    let rowR = cornerRB.lerp(cornerRT, tj)
     dispatch_async(traceQueue) {
-      traceRow(buffer, j, fj)
+      traceRow(buffer, j, cam.pos, rowL, rowR)
     }
   }
   dispatch_barrier_async(traceQueue) {

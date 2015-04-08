@@ -19,7 +19,7 @@ class Plane: Surface {
     let num = norm.dot(pos - ray.pos)
     let den = norm.dot(ray.dir)
     let dist = num / den
-    if !isfinite(dist) || dist <= 0 || den > 0 { return nil }
+    if !dist.isFinite || dist <= 0 || den > 0 { return nil }
     // zero and tiny denominators result in infinity, indicating a ray parallel to the plane.
     // negative distance indicates the ray is behind the plane.
     // zero distance indicates that the ray originated on the plane, in which case it should not be captured.

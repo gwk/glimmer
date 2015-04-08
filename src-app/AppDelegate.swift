@@ -49,7 +49,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     window.bind(NSTitleBinding, toObject:viewController, withKeyPath:"title", options:nil)
     viewController.updateWindowObserver()
     
-    window.origin = V2(0, 0)
+    window.origin = V2(8, 48)
     window.size = CGSize(Flt(windowSize.x), Flt(windowSize.y))
     window.makeKeyAndOrderFront(nil)
     
