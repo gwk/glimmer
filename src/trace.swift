@@ -22,7 +22,7 @@ let scene = {
       
       Sphere(pos: V3D(0, 0, 0),  rad: 0.4, material: Material(isLight: false, col:V3D(1, 1, 1))),
       
-      Sphere(pos: V3D(0, 1, 0), rad: 0.3, material: Material(isLight: true, col:V3D(8, 8, 8))), // center light.
+      Sphere(pos: V3D(0, 1, 0), rad: 0.2, material: Material(isLight: true, col:V3D(8, 8, 8))), // center light.
     ])
 }()
 
