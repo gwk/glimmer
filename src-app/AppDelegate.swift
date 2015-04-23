@@ -35,7 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     app.mainMenu = menuBar
     
     viewController = GLViewController(pixFmt: .RGBAU8D16)
-    viewController.title = "Glint"
+    viewController.title = "Glimmer"
     viewController.render = render
     viewController.handleEvent = handleEvent
     viewController.glView.glLayer.asynchronous = false

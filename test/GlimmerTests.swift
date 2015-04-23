@@ -4,7 +4,7 @@
 import Cocoa
 import XCTest
 
-class GlintTests: XCTestCase {
+class GlimmerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

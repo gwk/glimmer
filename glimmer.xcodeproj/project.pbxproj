@@ -108,7 +108,7 @@
 		EC42379A1AD12BDB00A54C2E /* mat-generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4237991AD12BDB00A54C2E /* mat-generated.swift */; };
 		EC53334419D8A6E8006D7908 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC62596F198EB20200876DFC /* Images.xcassets */; };
 		EC625968198EB20200876DFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC625967198EB20200876DFC /* AppDelegate.swift */; };
-		EC62597F198EB20200876DFC /* GlintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC62597E198EB20200876DFC /* GlintTests.swift */; };
+		EC62597F198EB20200876DFC /* GlimmerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC62597E198EB20200876DFC /* GlimmerTests.swift */; };
 		EC7A00551AB7414B003575E3 /* GLTextAtlas.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A00521AB7414B003575E3 /* GLTextAtlas.swift */; };
 		EC7A00561AB7414B003575E3 /* GLTextPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A00531AB7414B003575E3 /* GLTextPage.swift */; };
 		EC7A00571AB7414B003575E3 /* GLTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A00541AB7414B003575E3 /* GLTextView.swift */; };
@@ -149,14 +149,14 @@
 			containerPortal = EC625958198EB20200876DFC /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EC62595F198EB20200876DFC;
-			remoteInfo = Glint;
+			remoteInfo = Glimmer;
 		};
 		EC62598A198EBDBC00876DFC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EC625958198EB20200876DFC /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EC62595F198EB20200876DFC;
-			remoteInfo = Glint;
+			remoteInfo = Glimmer;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -180,7 +180,7 @@
 		EC0C677D1AB9E0D90079ECE5 /* core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
 		EC0FDCE41AD414710017A839 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EC0FDCE61AD414710017A839 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		EC0FDCED1AD4158F0017A839 /* glint-tool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "glint-tool"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC0FDCED1AD4158F0017A839 /* glimmer-tool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "glimmer-tool"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC0FDD221AD418FC0017A839 /* AreaBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaBuffer.swift; sourceTree = "<group>"; };
 		EC17DAF01AD578EB00BB82E4 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		EC2226041AA155A20090C8E8 /* NSManagedObjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectModel.swift; sourceTree = "<group>"; };
@@ -231,13 +231,13 @@
 		EC53332919D8A56D006D7908 /* license-qk.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "license-qk.txt"; sourceTree = "<group>"; };
 		EC53332A19D8A56D006D7908 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
 		EC60F67819D0641C00CDDC84 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
-		EC625960198EB20200876DFC /* Glint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glint.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC625960198EB20200876DFC /* Glimmer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glimmer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC625964198EB20200876DFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC625967198EB20200876DFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC62596F198EB20200876DFC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		EC625978198EB20200876DFC /* GlintTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlintTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC625978198EB20200876DFC /* GlimmerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlimmerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC62597D198EB20200876DFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC62597E198EB20200876DFC /* GlintTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlintTests.swift; sourceTree = "<group>"; };
+		EC62597E198EB20200876DFC /* GlimmerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlimmerTests.swift; sourceTree = "<group>"; };
 		EC7A00521AB7414B003575E3 /* GLTextAtlas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLTextAtlas.swift; sourceTree = "<group>"; };
 		EC7A00531AB7414B003575E3 /* GLTextPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLTextPage.swift; sourceTree = "<group>"; };
 		EC7A00541AB7414B003575E3 /* GLTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLTextView.swift; sourceTree = "<group>"; };
@@ -481,9 +481,9 @@
 		EC625961198EB20200876DFC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EC625960198EB20200876DFC /* Glint.app */,
-				EC625978198EB20200876DFC /* GlintTests.xctest */,
-				EC0FDCED1AD4158F0017A839 /* glint-tool */,
+				EC625960198EB20200876DFC /* Glimmer.app */,
+				EC625978198EB20200876DFC /* GlimmerTests.xctest */,
+				EC0FDCED1AD4158F0017A839 /* glimmer-tool */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -511,7 +511,7 @@
 		EC62597B198EB20200876DFC /* test */ = {
 			isa = PBXGroup;
 			children = (
-				EC62597E198EB20200876DFC /* GlintTests.swift */,
+				EC62597E198EB20200876DFC /* GlimmerTests.swift */,
 				EC62597D198EB20200876DFC /* Info.plist */,
 			);
 			path = test;
@@ -528,9 +528,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EC0FDCEC1AD4158F0017A839 /* glint-tool */ = {
+		EC0FDCEC1AD4158F0017A839 /* glimmer-tool */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC0FDCF11AD4158F0017A839 /* Build configuration list for PBXNativeTarget "glint-tool" */;
+			buildConfigurationList = EC0FDCF11AD4158F0017A839 /* Build configuration list for PBXNativeTarget "glimmer-tool" */;
 			buildPhases = (
 				EC0FDCE91AD4158F0017A839 /* Sources */,
 				EC0FDCEA1AD4158F0017A839 /* Frameworks */,
@@ -540,14 +540,14 @@
 			);
 			dependencies = (
 			);
-			name = "glint-tool";
-			productName = "glint-tool";
-			productReference = EC0FDCED1AD4158F0017A839 /* glint-tool */;
+			name = "glimmer-tool";
+			productName = "glimmer-tool";
+			productReference = EC0FDCED1AD4158F0017A839 /* glimmer-tool */;
 			productType = "com.apple.product-type.tool";
 		};
-		EC62595F198EB20200876DFC /* Glint */ = {
+		EC62595F198EB20200876DFC /* Glimmer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC625982198EB20200876DFC /* Build configuration list for PBXNativeTarget "Glint" */;
+			buildConfigurationList = EC625982198EB20200876DFC /* Build configuration list for PBXNativeTarget "Glimmer" */;
 			buildPhases = (
 				EC62595C198EB20200876DFC /* Sources */,
 				EC62595D198EB20200876DFC /* Frameworks */,
@@ -558,14 +558,14 @@
 			);
 			dependencies = (
 			);
-			name = Glint;
-			productName = Glint;
-			productReference = EC625960198EB20200876DFC /* Glint.app */;
+			name = Glimmer;
+			productName = Glimmer;
+			productReference = EC625960198EB20200876DFC /* Glimmer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EC625977198EB20200876DFC /* GlintTests */ = {
+		EC625977198EB20200876DFC /* GlimmerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC625985198EB20200876DFC /* Build configuration list for PBXNativeTarget "GlintTests" */;
+			buildConfigurationList = EC625985198EB20200876DFC /* Build configuration list for PBXNativeTarget "GlimmerTests" */;
 			buildPhases = (
 				EC625974198EB20200876DFC /* Sources */,
 				EC625975198EB20200876DFC /* Frameworks */,
@@ -577,9 +577,9 @@
 				EC62597A198EB20200876DFC /* PBXTargetDependency */,
 				EC62598B198EBDBC00876DFC /* PBXTargetDependency */,
 			);
-			name = GlintTests;
-			productName = GlintTests;
-			productReference = EC625978198EB20200876DFC /* GlintTests.xctest */;
+			name = GlimmerTests;
+			productName = GlimmerTests;
+			productReference = EC625978198EB20200876DFC /* GlimmerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -603,7 +603,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EC62595B198EB20200876DFC /* Build configuration list for PBXProject "glint" */;
+			buildConfigurationList = EC62595B198EB20200876DFC /* Build configuration list for PBXProject "glimmer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -616,9 +616,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EC62595F198EB20200876DFC /* Glint */,
-				EC625977198EB20200876DFC /* GlintTests */,
-				EC0FDCEC1AD4158F0017A839 /* glint-tool */,
+				EC62595F198EB20200876DFC /* Glimmer */,
+				EC625977198EB20200876DFC /* GlimmerTests */,
+				EC0FDCEC1AD4158F0017A839 /* glimmer-tool */,
 			);
 		};
 /* End PBXProject section */
@@ -808,7 +808,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC62597F198EB20200876DFC /* GlintTests.swift in Sources */,
+				EC62597F198EB20200876DFC /* GlimmerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -817,12 +817,12 @@
 /* Begin PBXTargetDependency section */
 		EC62597A198EB20200876DFC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EC62595F198EB20200876DFC /* Glint */;
+			target = EC62595F198EB20200876DFC /* Glimmer */;
 			targetProxy = EC625979198EB20200876DFC /* PBXContainerItemProxy */;
 		};
 		EC62598B198EBDBC00876DFC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EC62595F198EB20200876DFC /* Glint */;
+			target = EC62595F198EB20200876DFC /* Glimmer */;
 			targetProxy = EC62598A198EBDBC00876DFC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -974,7 +974,7 @@
 		EC625986198EB20200876DFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Glint.app/Contents/MacOS/Glint";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Glimmer.app/Contents/MacOS/Glimmer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -994,7 +994,7 @@
 		EC625987198EB20200876DFC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Glint.app/Contents/MacOS/Glint";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Glimmer.app/Contents/MacOS/Glimmer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -1010,7 +1010,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EC0FDCF11AD4158F0017A839 /* Build configuration list for PBXNativeTarget "glint-tool" */ = {
+		EC0FDCF11AD4158F0017A839 /* Build configuration list for PBXNativeTarget "glimmer-tool" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC0FDCF21AD4158F0017A839 /* Debug */,
@@ -1019,7 +1019,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC62595B198EB20200876DFC /* Build configuration list for PBXProject "glint" */ = {
+		EC62595B198EB20200876DFC /* Build configuration list for PBXProject "glimmer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC625980198EB20200876DFC /* Debug */,
@@ -1028,7 +1028,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC625982198EB20200876DFC /* Build configuration list for PBXNativeTarget "Glint" */ = {
+		EC625982198EB20200876DFC /* Build configuration list for PBXNativeTarget "Glimmer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC625983198EB20200876DFC /* Debug */,
@@ -1037,7 +1037,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC625985198EB20200876DFC /* Build configuration list for PBXNativeTarget "GlintTests" */ = {
+		EC625985198EB20200876DFC /* Build configuration list for PBXNativeTarget "GlimmerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC625986198EB20200876DFC /* Debug */,
