@@ -31,8 +31,11 @@ let program = GLProgram(name: "program", sources: [
   ])
 
 
-var traceBuffer: PixelBuffer! = nil
-let traceTex = GLTexture()
+let windowSize = V2I(256, 256)
+
+var tracer: Tracer! = nil
+var traceTex: GLTexture! = nil
+
 let texBuffer = AreaBuffer<(U8, U8, U8)>()
 
 var needsSetup = true
@@ -41,29 +44,33 @@ func setup() {
     return
   }
   needsSetup = false
-  traceBuffer = runTracer() {
+  traceTex = GLTexture()
+  tracer = Tracer(scene: testScene, passCount: testPassCount, maxRaySteps: testMaxRaySteps, bufferSize: testBufferSize) {
+    (tracer) in
+    // copy trace buffer to render buffer.
+    assert(texBuffer.count == tracer.buffer.count)
+    for i in 0..<texBuffer.count {
+      texBuffer[i] = tracer.buffer[i].colU8
+    }
     appDelegate.viewController.glView.layer!.setNeedsDisplay()
   }
-  texBuffer.resize(traceBuffer.size, val: (0, 0, 0)) // after runTracer sets up traceBuffer, resize to match.
+  texBuffer.resize(tracer.buffer.size, val: (0, 0, 0)) // resize to match.
+  tracer.run()
 }
 
 
 var renderCounter = 0
 
 func render(scale: F32, sizePt: V2S, time: Time) {
-  println("render: \(renderCounter); concurrent calls to traceRow: \(concTraceRows)")
+  println("render: \(renderCounter)")
   glClearColor(0, 0, 0, 0)
   glClear(GLbitfield(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT))
   setup()
   
-  // copy trace buffer to render buffer.
-  assert(texBuffer.count == traceBuffer.count)
-  for i in 0..<texBuffer.count {
-    texBuffer[i] = traceBuffer[i].colU8
-  }
+  // TODO: bind traceTex?
   texBuffer.withUnsafeBufferPointer() {
     (bp) -> () in
-    traceTex.update(w: bufferSize.x, h: bufferSize.y, fmt: .RGB, dataFmt: .RGB, dataType: .U8, data: bp.baseAddress)
+    traceTex.update(w: texBuffer.size.x, h: texBuffer.size.y, fmt: .RGB, dataFmt: .RGB, dataType: .U8, data: bp.baseAddress)
     traceTex.setFilter(GLenum(GL_NEAREST))
   }
 

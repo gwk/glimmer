@@ -4,9 +4,14 @@
 import Foundation
 
 
-struct Scene {
+class Scene {
   let camera: Camera
   let surfaces: [Surface]
+  
+  init(camera: Camera, surfaces: [Surface]) {
+    self.camera = camera
+    self.surfaces = surfaces
+  }
   
   func query(ray: Ray) -> Intersection? {
     var best: Intersection? = nil
