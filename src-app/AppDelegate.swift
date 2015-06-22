@@ -44,7 +44,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       contentRect: CGRectZero, // gets clobbered by controller view initial size so why bother.
       styleMask: NSTitledWindowMask | NSClosableWindowMask | NSMiniaturizableWindowMask | NSResizableWindowMask,
       backing: NSBackingStoreType.Buffered,
-      defer: false)
+      `defer`: false)
     window.contentViewController = viewController
     window.bind(NSTitleBinding, toObject:viewController, withKeyPath:"title", options:nil)
     viewController.updateWindowObserver()

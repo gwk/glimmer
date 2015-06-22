@@ -53,7 +53,7 @@ class Tracer {
     let cornerRT = camRot * V3D(cx, cy, 1)
     
     let rowCount = bufferSize.y
-    rowPairs = map(0..<buffer.size.y) {
+    rowPairs = (0..<buffer.size.y).map {
       (j) -> (V3D, V3D) in
       let tj = ((Double(j) + 0.5) / Double(rowCount))
       let rowL = cornerLB.lerp(cornerLT, tj)
@@ -65,7 +65,7 @@ class Tracer {
   func tracePrimaryRay(primaryRay: Ray) -> V3D {
     var ray = primaryRay
     var col = V3D(1, 1, 1)
-    for i in 0..<maxRaySteps {
+    for _ in 0..<maxRaySteps {
       //raysTot.inc(i)
       if let intersection = scene.query(ray) {
         col = col * intersection.surface.material.col
@@ -73,7 +73,7 @@ class Tracer {
           //raysLit.inc(i)
           return col
         }
-        ray = bounce(ray, intersection)
+        ray = bounce(ray, intersection: intersection)
         //atmInc(&bouncesTot)
         if intersection.norm.dot(ray.dir) < 0 {
           //atmInc(&bouncesNeg)
@@ -107,7 +107,7 @@ class Tracer {
   }
   
   func finishPass() {
-    func frac(num: I64, den: I64) -> F64 { return F64(num) / F64(max(1, den)) }
+    func frac(num: I64, _ den: I64) -> F64 { return F64(num) / F64(max(1, den)) }
 
     var lines = [
       "pass:\(passIndex) time:\(appTime() - passTime)",
@@ -140,7 +140,7 @@ class Tracer {
   
   func run() {
     passTime = appTime()
-    for i in 0..<1 {
+    for _ in 0..<1 {
       spawnThread() {
         while true {
           let rowIndex = syncAround(self) {

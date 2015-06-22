@@ -38,14 +38,14 @@ func randNormOld() -> V3D {
 func randNorm(min: Double, max: Double) -> V3D {
   assert(min >= -1 && min <= 1)
   assert(max >= -1 && max <= 1)
-  let x = randD(min, max)
-  let theta = randD(0, k_2_pi)
+  let x = randD(min, max: max)
+  let theta = randD(0, max: k_2_pi)
   let w = sqrt(1 - x.sqr)
   return V3D(x, w * cos(theta), w * sin(theta))
 }
 
 func randNorm() -> V3D {
-  return randNorm(-1, 1)
+  return randNorm(-1, max: 1)
 }
 
 
@@ -62,7 +62,7 @@ func bounce(ray: Ray, intersection: Intersection) -> Ray {
     let rot = M3DRot(theta, c)
     let out = rot * randGlobal
     #else // perfectly diffuse.
-    var out = randNorm(-1, 1)
+    var out = randNorm(-1, max: 1)
     if norm.dot(out) < 0 {
       out = out * -1
     }

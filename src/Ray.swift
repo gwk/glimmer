@@ -4,7 +4,7 @@
 import Foundation
 
 
-struct Ray: Printable {
+struct Ray: CustomStringConvertible {
   let pos: V3D
   let dir: V3D // normalized direction.
   

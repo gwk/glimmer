@@ -62,7 +62,7 @@ func setup() {
 var renderCounter = 0
 
 func render(scale: F32, sizePt: V2S, time: Time) {
-  println("render: \(renderCounter)")
+  print("render: \(renderCounter)")
   glClearColor(0, 0, 0, 0)
   glClear(GLbitfield(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT))
   setup()
