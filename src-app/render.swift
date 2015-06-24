@@ -45,16 +45,16 @@ func setup() {
   }
   needsSetup = false
   traceTex = GLTexture()
-  tracer = Tracer(scene: testScene, passCount: testPassCount, maxRaySteps: testMaxRaySteps, bufferSize: testBufferSize) {
-    (tracer) in
+  texBuffer.resize(testBufferSize, val: (0, 0, 0))
+  tracer = Tracer(scene: testScene, bufferSize: testBufferSize, passCount: testPassCount, maxRaySteps: testMaxRaySteps) {
+    (tracer, tracerState) in
     // copy trace buffer to render buffer.
-    assert(texBuffer.count == tracer.buffer.count)
+    assert(texBuffer.count == tracerState.buffer.count)
     for i in 0..<texBuffer.count {
-      texBuffer[i] = tracer.buffer[i].colU8
+      texBuffer[i] = tracerState.buffer[i].colU8
     }
     appDelegate.viewController.glView.layer!.setNeedsDisplay()
   }
-  texBuffer.resize(tracer.buffer.size, val: (0, 0, 0)) // resize to match.
   tracer.run()
 }
 
