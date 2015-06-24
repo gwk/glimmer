@@ -41,7 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     viewController.glView.glLayer.asynchronous = false
     
     window = NSWindow(
-      contentRect: CGRectZero, // gets clobbered by controller view initial size so why bother.
+      contentRect: CGRectZero, // arbitrary; gets clobbered by controller view initial size.
       styleMask: NSTitledWindowMask | NSClosableWindowMask | NSMiniaturizableWindowMask | NSResizableWindowMask,
       backing: NSBackingStoreType.Buffered,
       `defer`: false)
@@ -52,6 +52,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     window.origin = V2(8, 48)
     window.size = CGSize(Flt(windowSize.x), Flt(windowSize.y))
     window.makeKeyAndOrderFront(nil)
-    
   }
 }
