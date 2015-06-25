@@ -929,7 +929,7 @@
 				);
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = src/bridge.h;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};

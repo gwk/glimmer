@@ -136,6 +136,7 @@ class Tracer {
       lines.append("  rays[\(i)]:\(tot) lit:\(lit)|\(frac(lit, tot)) missed:\(missed)|\(frac(missed, tot)) bounced:\(bounced)|\(frac(bounced, tot))")
     }
     lines.append("  died:\(raysDied)|\(frac(raysDied, raysTot[0]))")
+    lines.append("  lock: \(lockedState.statsDesc())")
     outLLA(lines)
 
     raysTot.zeroAll()
@@ -154,8 +155,8 @@ class Tracer {
   
   func run() {
     lockedState.access(startPass)
-    for _ in 0..<1 {
-      spawnThread() {
+    for i in 0..<4 {
+      spawnThread("trace thread \(i)") {
         while true {
           let rowIndex = self.lockedState.access {
             (state) -> Int? in
