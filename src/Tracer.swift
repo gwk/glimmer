@@ -155,7 +155,7 @@ class Tracer {
   
   func run() {
     lockedState.access(startPass)
-    for i in 0..<4 {
+    for i in 0..<processorCount {
       spawnThread("trace thread \(i)") {
         while true {
           let rowIndex = self.lockedState.access {
