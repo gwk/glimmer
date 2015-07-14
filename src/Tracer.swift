@@ -2,6 +2,7 @@
 // All rights reserved.
 
 import Foundation
+import simd
 
 
 class TracerState {
@@ -12,7 +13,7 @@ class TracerState {
   var rowIndex = 0
   var passTime: Time = 0
 
-  var rowCount: Int { return buffer.size.y }
+  var rowCount: Int { return Int(buffer.size.y) }
   var isPassComplete: Bool { return rowIndex == rowCount }
   var isTraceComplete: Bool { return passIndex == passCount }
   
@@ -100,7 +101,7 @@ class Tracer {
   
   func traceRow(rowIndex: Int, rowL: V3D, rowR: V3D) {
     //atmInc(&concTraceRows)
-    for i in 0..<bufferSize.x {
+    for i in 0..<Int(bufferSize.x) {
       let ti = ((Double(i) + 0.5) / Double(bufferSize.x))
       let primary = Ray(pos: scene.camera.pos, dir: rowL.lerp(rowR, ti).norm)
       let col = tracePrimaryRay(primary)

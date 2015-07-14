@@ -23,7 +23,7 @@
 		EC0FDCFE1AD415C80017A839 /* Surface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A28201AD2F473008A55DF /* Surface.swift */; };
 		EC0FDCFF1AD415C80017A839 /* Ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08D65F1AD073A900FCC955 /* Ray.swift */; };
 		EC0FDD001AD415C80017A839 /* Tracer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08D6611AD0870C00FCC955 /* Tracer.swift */; };
-		EC0FDD011AD415DB0017A839 /* arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226061AA155A20090C8E8 /* arithmetic.swift */; };
+		EC0FDD011AD415DB0017A839 /* ArithmeticType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226061AA155A20090C8E8 /* ArithmeticType.swift */; };
 		EC0FDD021AD415DB0017A839 /* atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A281A1AD2CE54008A55DF /* atomic.swift */; };
 		EC0FDD041AD415DB0017A839 /* dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0DA261ABDE4DC00E060E2 /* dispatch.swift */; };
 		EC0FDD051AD415DB0017A839 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F6B3A1AAC913A008D8178 /* Error.swift */; };
@@ -33,7 +33,6 @@
 		EC0FDD091AD415DB0017A839 /* math.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22260B1AA155A20090C8E8 /* math.swift */; };
 		EC0FDD0B1AD415DB0017A839 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F6B3C1AAC95F4008D8178 /* Result.swift */; };
 		EC0FDD0C1AD415DB0017A839 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E70F61ABB85640072D6BC /* Resource.swift */; };
-		EC0FDD0D1AD415DB0017A839 /* types.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22260C1AA155A20090C8E8 /* types.swift */; };
 		EC0FDD0E1AD415DB0017A839 /* util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22260D1AA155A20090C8E8 /* util.swift */; };
 		EC0FDD0F1AD415DB0017A839 /* vec-generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0C677B1AB9DF240079ECE5 /* vec-generated.swift */; };
 		EC0FDD101AD415DB0017A839 /* VecType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0C67791AB9DF1B0079ECE5 /* VecType.swift */; };
@@ -64,13 +63,12 @@
 		EC17DAF61AD5CAE000BB82E4 /* PixFmt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226361AA155A30090C8E8 /* PixFmt.swift */; };
 		EC17DAF71AD5CAF600BB82E4 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC17DAF01AD578EB00BB82E4 /* Camera.swift */; };
 		EC22265D1AA155A30090C8E8 /* NSManagedObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226041AA155A20090C8E8 /* NSManagedObjectModel.swift */; };
-		EC22265E1AA155A30090C8E8 /* arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226061AA155A20090C8E8 /* arithmetic.swift */; };
+		EC22265E1AA155A30090C8E8 /* ArithmeticType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226061AA155A20090C8E8 /* ArithmeticType.swift */; };
 		EC22265F1AA155A30090C8E8 /* func.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226081AA155A20090C8E8 /* func.swift */; };
 		EC2226601AA155A30090C8E8 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226091AA155A20090C8E8 /* Index.swift */; };
 		EC2226621AA155A30090C8E8 /* math.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22260B1AA155A20090C8E8 /* math.swift */; };
-		EC2226631AA155A30090C8E8 /* types.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22260C1AA155A20090C8E8 /* types.swift */; };
 		EC2226641AA155A30090C8E8 /* util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22260D1AA155A20090C8E8 /* util.swift */; };
-		EC2226651AA155A30090C8E8 /* CoreGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22260F1AA155A20090C8E8 /* CoreGraphics.swift */; };
+		EC2226651AA155A30090C8E8 /* Flt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22260F1AA155A20090C8E8 /* Flt.swift */; };
 		EC2226661AA155A30090C8E8 /* CRColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226101AA155A20090C8E8 /* CRColor.swift */; };
 		EC2226671AA155A30090C8E8 /* CREdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226111AA155A20090C8E8 /* CREdgeInsets.swift */; };
 		EC2226681AA155A30090C8E8 /* CREvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226121AA155A20090C8E8 /* CREvent.swift */; };
@@ -81,7 +79,7 @@
 		EC22266D1AA155A30090C8E8 /* NSLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2226181AA155A20090C8E8 /* NSLayoutConstraint.m */; };
 		EC22266E1AA155A30090C8E8 /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2226191AA155A20090C8E8 /* NSLayoutConstraint.swift */; };
 		EC22266F1AA155A30090C8E8 /* QKResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22261A1AA155A20090C8E8 /* QKResponder.swift */; };
-		EC2226701AA155A30090C8E8 /* V2-generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22261B1AA155A20090C8E8 /* V2-generated.swift */; };
+		EC2226701AA155A30090C8E8 /* CGPoint-generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22261B1AA155A20090C8E8 /* CGPoint-generated.swift */; };
 		EC2226711AA155A30090C8E8 /* NSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22261D1AA155A20090C8E8 /* NSBundle.swift */; };
 		EC2226721AA155A30090C8E8 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22261E1AA155A20090C8E8 /* NSDate.swift */; };
 		EC2226731AA155A30090C8E8 /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22261F1AA155A20090C8E8 /* NSError.swift */; };
@@ -132,6 +130,9 @@
 		EC87BDC41AA8E8CD00A10BAB /* GLEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC87BDC31AA8E8CD00A10BAB /* GLEvent.swift */; };
 		EC8A72651AA791CF007B038E /* CRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A72641AA791CF007B038E /* CRViewController.swift */; };
 		EC8A72671AA7924B007B038E /* GLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A72661AA7924B007B038E /* GLViewController.swift */; };
+		EC8C39E01B3DD69400C5569D /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8C39DF1B3DD69400C5569D /* CGPoint.swift */; };
+		EC8C39E21B3DD75700C5569D /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8C39E11B3DD75700C5569D /* CGRect.swift */; };
+		EC8C39E41B3DD7B700C5569D /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8C39E31B3DD7B700C5569D /* CGSize.swift */; };
 		EC8D87881AC10A1900C38431 /* CollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8D87871AC10A1900C38431 /* CollectionType.swift */; };
 		EC8E70F51ABB740A0072D6BC /* SourceCodePro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC8E70F41ABB740A0072D6BC /* SourceCodePro-Regular.otf */; };
 		EC8E70F71ABB85640072D6BC /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E70F61ABB85640072D6BC /* Resource.swift */; };
@@ -189,13 +190,12 @@
 		EC0FDD221AD418FC0017A839 /* AreaBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaBuffer.swift; sourceTree = "<group>"; };
 		EC17DAF01AD578EB00BB82E4 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		EC2226041AA155A20090C8E8 /* NSManagedObjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectModel.swift; sourceTree = "<group>"; };
-		EC2226061AA155A20090C8E8 /* arithmetic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = arithmetic.swift; sourceTree = "<group>"; };
+		EC2226061AA155A20090C8E8 /* ArithmeticType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArithmeticType.swift; sourceTree = "<group>"; };
 		EC2226081AA155A20090C8E8 /* func.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = func.swift; sourceTree = "<group>"; };
 		EC2226091AA155A20090C8E8 /* Index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
 		EC22260B1AA155A20090C8E8 /* math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = math.swift; sourceTree = "<group>"; };
-		EC22260C1AA155A20090C8E8 /* types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = types.swift; sourceTree = "<group>"; };
 		EC22260D1AA155A20090C8E8 /* util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = util.swift; sourceTree = "<group>"; };
-		EC22260F1AA155A20090C8E8 /* CoreGraphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphics.swift; sourceTree = "<group>"; };
+		EC22260F1AA155A20090C8E8 /* Flt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flt.swift; sourceTree = "<group>"; };
 		EC2226101AA155A20090C8E8 /* CRColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRColor.swift; sourceTree = "<group>"; };
 		EC2226111AA155A20090C8E8 /* CREdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CREdgeInsets.swift; sourceTree = "<group>"; };
 		EC2226121AA155A20090C8E8 /* CREvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CREvent.swift; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 		EC2226181AA155A20090C8E8 /* NSLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSLayoutConstraint.m; sourceTree = "<group>"; };
 		EC2226191AA155A20090C8E8 /* NSLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint.swift; sourceTree = "<group>"; };
 		EC22261A1AA155A20090C8E8 /* QKResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QKResponder.swift; sourceTree = "<group>"; };
-		EC22261B1AA155A20090C8E8 /* V2-generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "V2-generated.swift"; sourceTree = "<group>"; };
+		EC22261B1AA155A20090C8E8 /* CGPoint-generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint-generated.swift"; sourceTree = "<group>"; };
 		EC22261D1AA155A20090C8E8 /* NSBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundle.swift; sourceTree = "<group>"; };
 		EC22261E1AA155A20090C8E8 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		EC22261F1AA155A20090C8E8 /* NSError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
@@ -230,6 +230,7 @@
 		EC22265A1AA155A30090C8E8 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		EC22265B1AA155A30090C8E8 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		EC22265C1AA155A30090C8E8 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		EC2A9BDA1B557E9F00B253C3 /* libswiftsimd.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftsimd.tbd; path = System/Library/PrivateFrameworks/Swift/libswiftsimd.tbd; sourceTree = SDKROOT; };
 		EC2AE4AD1B0E975600C4E024 /* ArrayRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayRef.swift; sourceTree = "<group>"; };
 		EC2AE4B01B0EA9DE00C4E024 /* Locked.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locked.swift; sourceTree = "<group>"; };
 		EC4237991AD12BDB00A54C2E /* mat-generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "mat-generated.swift"; sourceTree = "<group>"; };
@@ -266,6 +267,9 @@
 		EC87BDC31AA8E8CD00A10BAB /* GLEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLEvent.swift; sourceTree = "<group>"; };
 		EC8A72641AA791CF007B038E /* CRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRViewController.swift; sourceTree = "<group>"; };
 		EC8A72661AA7924B007B038E /* GLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLViewController.swift; sourceTree = "<group>"; };
+		EC8C39DF1B3DD69400C5569D /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		EC8C39E11B3DD75700C5569D /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
+		EC8C39E31B3DD7B700C5569D /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
 		EC8D87871AC10A1900C38431 /* CollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionType.swift; sourceTree = "<group>"; };
 		EC8E70F41ABB740A0072D6BC /* SourceCodePro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Regular.otf"; sourceTree = "<group>"; };
 		EC8E70F61ABB85640072D6BC /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
@@ -351,7 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				EC2AE4AD1B0E975600C4E024 /* ArrayRef.swift */,
-				EC2226061AA155A20090C8E8 /* arithmetic.swift */,
+				EC2226061AA155A20090C8E8 /* ArithmeticType.swift */,
 				EC7A281A1AD2CE54008A55DF /* atomic.swift */,
 				EC0C677D1AB9E0D90079ECE5 /* core.h */,
 				ECF0DA261ABDE4DC00E060E2 /* dispatch.swift */,
@@ -365,7 +369,6 @@
 				EC22260B1AA155A20090C8E8 /* math.swift */,
 				EC9F6B3C1AAC95F4008D8178 /* Result.swift */,
 				EC8E70F61ABB85640072D6BC /* Resource.swift */,
-				EC22260C1AA155A20090C8E8 /* types.swift */,
 				EC22260D1AA155A20090C8E8 /* util.swift */,
 				EC0C677B1AB9DF240079ECE5 /* vec-generated.swift */,
 				EC0C67791AB9DF1B0079ECE5 /* VecType.swift */,
@@ -378,7 +381,10 @@
 		EC22260E1AA155A20090C8E8 /* cr */ = {
 			isa = PBXGroup;
 			children = (
-				EC22260F1AA155A20090C8E8 /* CoreGraphics.swift */,
+				EC8C39DF1B3DD69400C5569D /* CGPoint.swift */,
+				EC22261B1AA155A20090C8E8 /* CGPoint-generated.swift */,
+				EC8C39E11B3DD75700C5569D /* CGRect.swift */,
+				EC8C39E31B3DD7B700C5569D /* CGSize.swift */,
 				EC2226101AA155A20090C8E8 /* CRColor.swift */,
 				EC2226111AA155A20090C8E8 /* CREdgeInsets.swift */,
 				EC2226121AA155A20090C8E8 /* CREvent.swift */,
@@ -387,12 +393,12 @@
 				EC2226151AA155A20090C8E8 /* CRView.swift */,
 				EC8A72641AA791CF007B038E /* CRViewController.swift */,
 				ECAF1A9D1AA79FCE00CC819B /* CRWindow.swift */,
+				EC22260F1AA155A20090C8E8 /* Flt.swift */,
 				EC2226161AA155A20090C8E8 /* layout.swift */,
 				EC2226171AA155A20090C8E8 /* NSLayoutConstraint.h */,
 				EC2226181AA155A20090C8E8 /* NSLayoutConstraint.m */,
 				EC2226191AA155A20090C8E8 /* NSLayoutConstraint.swift */,
 				EC22261A1AA155A20090C8E8 /* QKResponder.swift */,
-				EC22261B1AA155A20090C8E8 /* V2-generated.swift */,
 			);
 			path = cr;
 			sourceTree = "<group>";
@@ -474,6 +480,7 @@
 		EC625957198EB20200876DFC = {
 			isa = PBXGroup;
 			children = (
+				EC2A9BDA1B557E9F00B253C3 /* libswiftsimd.tbd */,
 				ECEB9D251B390A4E00F8F9ED /* dependencies */,
 				EC62596F198EB20200876DFC /* Images.xcassets */,
 				EC625964198EB20200876DFC /* Info.plist */,
@@ -695,7 +702,7 @@
 				EC0FDCFE1AD415C80017A839 /* Surface.swift in Sources */,
 				EC0FDCFF1AD415C80017A839 /* Ray.swift in Sources */,
 				EC0FDD001AD415C80017A839 /* Tracer.swift in Sources */,
-				EC0FDD011AD415DB0017A839 /* arithmetic.swift in Sources */,
+				EC0FDD011AD415DB0017A839 /* ArithmeticType.swift in Sources */,
 				EC0FDD021AD415DB0017A839 /* atomic.swift in Sources */,
 				EC0FDD041AD415DB0017A839 /* dispatch.swift in Sources */,
 				EC0FDD051AD415DB0017A839 /* Error.swift in Sources */,
@@ -705,7 +712,6 @@
 				EC0FDD091AD415DB0017A839 /* math.swift in Sources */,
 				EC0FDD0B1AD415DB0017A839 /* Result.swift in Sources */,
 				EC0FDD0C1AD415DB0017A839 /* Resource.swift in Sources */,
-				EC0FDD0D1AD415DB0017A839 /* types.swift in Sources */,
 				EC0FDD0E1AD415DB0017A839 /* util.swift in Sources */,
 				EC0FDD0F1AD415DB0017A839 /* vec-generated.swift in Sources */,
 				EC0FDD101AD415DB0017A839 /* VecType.swift in Sources */,
@@ -742,7 +748,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC2226701AA155A30090C8E8 /* V2-generated.swift in Sources */,
+				EC2226701AA155A30090C8E8 /* CGPoint-generated.swift in Sources */,
 				EC9F6B431AACCC7E008D8178 /* Image.m in Sources */,
 				EC7A281B1AD2CE54008A55DF /* atomic.swift in Sources */,
 				EC2226841AA155A30090C8E8 /* GLTexture.swift in Sources */,
@@ -751,10 +757,12 @@
 				EC9F6B3B1AAC913A008D8178 /* Error.swift in Sources */,
 				EC2226851AA155A30090C8E8 /* View.swift in Sources */,
 				EC2226A51AA155A30090C8E8 /* Dictionary.swift in Sources */,
-				EC22265E1AA155A30090C8E8 /* arithmetic.swift in Sources */,
+				EC22265E1AA155A30090C8E8 /* ArithmeticType.swift in Sources */,
 				EC2AE4AE1B0E975600C4E024 /* ArrayRef.swift in Sources */,
 				EC7A28231AD2F4AF008A55DF /* Material.swift in Sources */,
 				EC2226671AA155A30090C8E8 /* CREdgeInsets.swift in Sources */,
+				EC8C39E41B3DD7B700C5569D /* CGSize.swift in Sources */,
+				EC8C39E01B3DD69400C5569D /* CGPoint.swift in Sources */,
 				EC8A72651AA791CF007B038E /* CRViewController.swift in Sources */,
 				EC8E70F91ABBBEE00072D6BC /* Process.swift in Sources */,
 				EC0FDCE71AD414710017A839 /* main.swift in Sources */,
@@ -770,7 +778,7 @@
 				EC2226A31AA155A30090C8E8 /* Array.swift in Sources */,
 				EC22267D1AA155A30090C8E8 /* GLView.swift in Sources */,
 				EC7A00571AB7414B003575E3 /* GLTextView.swift in Sources */,
-				EC2226651AA155A30090C8E8 /* CoreGraphics.swift in Sources */,
+				EC2226651AA155A30090C8E8 /* Flt.swift in Sources */,
 				EC2226731AA155A30090C8E8 /* NSError.swift in Sources */,
 				EC2226A61AA155A30090C8E8 /* Int.swift in Sources */,
 				EC7A005E1AB74183003575E3 /* img.swift in Sources */,
@@ -800,10 +808,10 @@
 				EC2226751AA155A30090C8E8 /* NSIndexPath.swift in Sources */,
 				EC7A282B1AD2F6A9008A55DF /* Intersection.swift in Sources */,
 				EC2AE4B11B0EA9DE00C4E024 /* Locked.swift in Sources */,
+				EC8C39E21B3DD75700C5569D /* CGRect.swift in Sources */,
 				EC22266C1AA155A30090C8E8 /* layout.swift in Sources */,
 				EC0C677A1AB9DF1B0079ECE5 /* VecType.swift in Sources */,
 				EC9F6B3F1AACCB7A008D8178 /* event.swift in Sources */,
-				EC2226631AA155A30090C8E8 /* types.swift in Sources */,
 				EC2226A81AA155A30090C8E8 /* String.swift in Sources */,
 				EC6EB3E51B2726D000401A40 /* Thread.swift in Sources */,
 				EC8E70F71ABB85640072D6BC /* Resource.swift in Sources */,
@@ -982,6 +990,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks/Swift",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -993,6 +1005,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks/Swift",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

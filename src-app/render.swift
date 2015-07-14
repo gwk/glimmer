@@ -70,7 +70,7 @@ func render(scale: F32, sizePt: V2S, time: Time) {
   // TODO: bind traceTex?
   texBuffer.withUnsafeBufferPointer() {
     (bp) -> () in
-    traceTex.update(w: texBuffer.size.x, h: texBuffer.size.y, fmt: .RGB, dataFmt: .RGB, dataType: .U8, data: bp.baseAddress)
+    traceTex.update(w: Int(texBuffer.size.x), h: Int(texBuffer.size.y), fmt: .RGB, dataFmt: .RGB, dataType: .U8, data: bp.baseAddress)
     traceTex.setFilter(GLenum(GL_NEAREST))
   }
 
