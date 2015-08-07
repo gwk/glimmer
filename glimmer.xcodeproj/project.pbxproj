@@ -107,6 +107,9 @@
 		EC2AE4B11B0EA9DE00C4E024 /* Locked.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2AE4B01B0EA9DE00C4E024 /* Locked.swift */; };
 		EC2AE4B21B0EA9DE00C4E024 /* Locked.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2AE4B01B0EA9DE00C4E024 /* Locked.swift */; };
 		EC42379A1AD12BDB00A54C2E /* mat-generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4237991AD12BDB00A54C2E /* mat-generated.swift */; };
+		EC49BCF71B75060C00660AF0 /* vec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC49BCF61B75060C00660AF0 /* vec.swift */; };
+		EC49BCF81B75060C00660AF0 /* vec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC49BCF61B75060C00660AF0 /* vec.swift */; };
+		EC49BCF91B75060C00660AF0 /* vec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC49BCF61B75060C00660AF0 /* vec.swift */; };
 		EC53334419D8A6E8006D7908 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC62596F198EB20200876DFC /* Images.xcassets */; };
 		EC588E891B3AF8F100C039FE /* DispatchFileModes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC588E881B3AF8F100C039FE /* DispatchFileModes.swift */; };
 		EC625968198EB20200876DFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC625967198EB20200876DFC /* AppDelegate.swift */; };
@@ -230,11 +233,11 @@
 		EC22265A1AA155A30090C8E8 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		EC22265B1AA155A30090C8E8 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		EC22265C1AA155A30090C8E8 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		EC2A9BDA1B557E9F00B253C3 /* libswiftsimd.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftsimd.tbd; path = System/Library/PrivateFrameworks/Swift/libswiftsimd.tbd; sourceTree = SDKROOT; };
 		EC2AE4AD1B0E975600C4E024 /* ArrayRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayRef.swift; sourceTree = "<group>"; };
 		EC2AE4B01B0EA9DE00C4E024 /* Locked.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locked.swift; sourceTree = "<group>"; };
 		EC4237991AD12BDB00A54C2E /* mat-generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "mat-generated.swift"; sourceTree = "<group>"; };
 		EC4852D519CCCFCE00A7B422 /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
+		EC49BCF61B75060C00660AF0 /* vec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = vec.swift; sourceTree = "<group>"; };
 		EC53332719D8A56D006D7908 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		EC53332919D8A56D006D7908 /* license-qk.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "license-qk.txt"; sourceTree = "<group>"; };
 		EC53332A19D8A56D006D7908 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
@@ -354,6 +357,7 @@
 		EC2226051AA155A20090C8E8 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				EC49BCF61B75060C00660AF0 /* vec.swift */,
 				EC2AE4AD1B0E975600C4E024 /* ArrayRef.swift */,
 				EC2226061AA155A20090C8E8 /* ArithmeticType.swift */,
 				EC7A281A1AD2CE54008A55DF /* atomic.swift */,
@@ -480,7 +484,6 @@
 		EC625957198EB20200876DFC = {
 			isa = PBXGroup;
 			children = (
-				EC2A9BDA1B557E9F00B253C3 /* libswiftsimd.tbd */,
 				ECEB9D251B390A4E00F8F9ED /* dependencies */,
 				EC62596F198EB20200876DFC /* Images.xcassets */,
 				EC625964198EB20200876DFC /* Info.plist */,
@@ -704,6 +707,7 @@
 				EC0FDD001AD415C80017A839 /* Tracer.swift in Sources */,
 				EC0FDD011AD415DB0017A839 /* ArithmeticType.swift in Sources */,
 				EC0FDD021AD415DB0017A839 /* atomic.swift in Sources */,
+				EC49BCF91B75060C00660AF0 /* vec.swift in Sources */,
 				EC0FDD041AD415DB0017A839 /* dispatch.swift in Sources */,
 				EC0FDD051AD415DB0017A839 /* Error.swift in Sources */,
 				EC0FDD061AD415DB0017A839 /* func.swift in Sources */,
@@ -818,6 +822,7 @@
 				EC8A72671AA7924B007B038E /* GLViewController.swift in Sources */,
 				EC2226801AA155A30090C8E8 /* GLLayer.swift in Sources */,
 				EC08D6621AD0870C00FCC955 /* Tracer.swift in Sources */,
+				EC49BCF71B75060C00660AF0 /* vec.swift in Sources */,
 				ECF0DA271ABDE4DC00E060E2 /* dispatch.swift in Sources */,
 				EC7A28251AD2F4C3008A55DF /* Sphere.swift in Sources */,
 				EC2226661AA155A30090C8E8 /* CRColor.swift in Sources */,
@@ -841,6 +846,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC49BCF81B75060C00660AF0 /* vec.swift in Sources */,
 				EC62597F198EB20200876DFC /* GlimmerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -929,6 +935,7 @@
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -937,7 +944,7 @@
 				);
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = src/bridge.h;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Debug;
 		};
@@ -973,6 +980,7 @@
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = (
 					"-lpng",
