@@ -47,6 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       `defer`: false)
     window.contentViewController = viewController
     window.bind(NSTitleBinding, toObject:viewController, withKeyPath:"title", options:nil)
+    window.contentAspectRatio = viewController.view.frame.size
     viewController.updateWindowObserver()
     
     window.origin = CGPoint(8, 48)
